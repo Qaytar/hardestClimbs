@@ -1,4 +1,4 @@
-import filterSends from '../utils/filterSends';
+import { filterSends } from '../utils/functionsHelpers';
 function BoulderWomanPage(props) {
     return (
         <div>

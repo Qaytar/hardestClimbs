@@ -1,4 +1,4 @@
-/**
+/**filterSends
  * Filters and sorts sends based on discipline, gender, and an optional limit.
  * @param {Array} data - The array of sends to filter and sort.
  * @param {string} discipline - The climbing discipline to filter by (e.g. 'sport', 'boulder').
@@ -6,7 +6,7 @@
  * @param {number} [limit] - The maximum number of sends to return. If not provided, all matching sends will be returned.
  * @returns {Array} - The filtered and sorted sends.
  */
-function filterSends(data, discipline, gender, limit) {
+export function filterSends(data, discipline, gender, limit) {
     // Filter sends by the specified discipline and gender
     const filteredData = data.filter(function (send) {
         return send.climber.gender === gender && send.route.discipline === discipline;
@@ -30,5 +30,5 @@ function filterSends(data, discipline, gender, limit) {
 
     return formattedData;
 }
-export default filterSends;
+
 

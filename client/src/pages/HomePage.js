@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import filterSends from '../utils/filterSends';
+import { filterSends } from '../utils/functionsHelpers';
 
 function HomePage(props) {
 
