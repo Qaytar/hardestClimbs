@@ -32,3 +32,71 @@ export function filterSends(data, discipline, gender, limit) {
 }
 
 
+/**rankClimbers
+ * Ranks climbers based on their sends.
+ * @param {Array} data - The array of sends to rank.
+ * @returns {Array} - The ranked climbers.
+ *PENDING TO DOCUMENT AND UNDERSTAND THIS FUNCTION
+ */
+const { rankedEuropeanGrades } = require('../utils/rankedGrades');
+export function rankClimbers(sends) {
+    const climbers = new Map();
+
+    for (const send of sends) {
+        const { climber, route } = send;
+
+        if (!climbers.has(climber._id)) {
+            climbers.set(climber._id, {
+                climber,
+                sends: [],
+            });
+        }
+
+        climbers.get(climber._id).sends.push(route);
+    }
+
+
+    const rankedClimbers = Array.from(climbers.values())
+        .map(({ climber, sends }) => ({
+            climber,
+            sends: {
+                sport: sends.filter((route) => route.discipline === 'sport'),
+                boulder: sends.filter((route) => route.discipline === 'boulder'),
+            },
+        }))
+        .sort((a, b) => {
+            const sportComparison = compareByGrades(a.sends.sport, b.sends.sport, rankedEuropeanGrades.sport);
+            if (sportComparison !== 0) return sportComparison;
+
+            const boulderComparison = compareByGrades(a.sends.boulder, b.sends.boulder, rankedEuropeanGrades.boulder);
+            return boulderComparison;
+        });
+
+
+    return rankedClimbers;
+}
+
+function compareByGrades(aSends, bSends, gradeList) {
+    const aGrades = countSendsByGrade(aSends, gradeList);
+    const bGrades = countSendsByGrade(bSends, gradeList);
+
+    for (let i = 0; i < gradeList.length; i++) {
+        if (aGrades[i] > bGrades[i]) return -1;
+        if (aGrades[i] < bGrades[i]) return 1;
+    }
+
+    return 0;
+}
+
+function countSendsByGrade(sends, gradeList) {
+    const gradeCount = new Array(gradeList.length).fill(0);
+
+    for (const send of sends) {
+        const index = gradeList.indexOf(send.europeanGrade);
+        if (index !== -1) {
+            gradeCount[index]++;
+        }
+    }
+
+    return gradeCount;
+}
