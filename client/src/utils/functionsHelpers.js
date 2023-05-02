@@ -1,3 +1,5 @@
+import classes from '../components/Sends.module.css';
+
 /**filterSends
  * Filters and sorts sends based on discipline, gender, and an optional limit.
  * @param {Array} data - The array of sends to filter and sort.
@@ -100,3 +102,21 @@ function countSendsByGrade(sends, gradeList) {
 
     return gradeCount;
 }
+/**hadleMouseEnter and handleMouseLeave
+ * Two functions to handle the hover effect over the grade to display the note
+ * @param {event} event - The event that triggers the function
+ *  
+ */
+
+export const handleMouseEnter = (event) => {
+    const popup = event.target.querySelector(`.${classes.gradeNotePopup}`);
+    if (popup) {
+        popup.style.display = 'block';
+    }
+};
+export const handleMouseLeave = (event) => {
+    const popup = event.target.querySelector(`.${classes.gradeNotePopup}`);
+    if (popup) {
+        popup.style.display = 'none';
+    }
+};
