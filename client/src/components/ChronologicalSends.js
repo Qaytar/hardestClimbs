@@ -4,7 +4,7 @@ import classes from './Sends.module.css';
 
 function ChronologicalSends(props) {
     //calls filteredSend to obtain the sub set off all the sends relevant to this page
-    const filteredSends = filterSends(props.data, props.filter.discipline, props.filter.gender)
+    const filteredSends = filterSends(props.data, props.filter.discipline, props.filter.gender, props.filter.limit);
 
     return (
         <div>
