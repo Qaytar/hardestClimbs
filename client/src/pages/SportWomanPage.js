@@ -1,21 +1,55 @@
-import { filterSends } from '../utils/functionsHelpers';
 import React, { useState, useEffect } from 'react';
+import ChronologicalSends from '../components/ChronologicalSends';
+import RankedClimberSends from '../components/RankedClimberSends';
+import Toggle from '../components/ui/Toggle';
+import PopupInstructions from '../components/PopupInstructions';
+
 function SportWomanPage(props) {
     //Scrolls to the top of the page when the component is mounted
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
+
+    //Create a state variavle to display sends chronologicaly or grouped be ranked climbers
+    const [isDisplayData, setIsDisplayData] = useState('chronological');
+    //Creates a function to toggle the display of the data, it's called when the button is clicked
+    const toggleDisplayData = () => {
+        setIsDisplayData(isDisplayData === 'chronological' ? 'byClimber' : 'chronological');
+    };
+
+    //Creates a state variable to track whether the grading system is European or American
+    const [isGradingSystem, setIsGradingSystem] = useState('european');
+    //Creates a function to toggle the grading system, it's called when the button is clicked
+    const toggleGradeDisplay = () => {
+        setIsGradingSystem(isGradingSystem === 'european' ? 'american' : 'european');
+    };
+
+    const filter = { discipline: 'sport', gender: 'woman' }
     return (
         <div>
-            <h1>SportWomanPage</h1>
-            {console.log('props.data', props.data)}
-            {filterSends(props.data, 'sport', 'woman').map((send, index) => (
-                <p key={index}>
-                    {send.route.name} ({send.route.europeanGrade}), by {send.climber.name} on {send.date}
-                </p>
-            ))}
+            <div>
+                <Toggle
+                    onClickFunction={toggleGradeDisplay}
+                    isState={isGradingSystem}
+                    checkState={'american'}
+                    options={['european grades', 'american grades']}
+                />
+                <Toggle
+                    onClickFunction={toggleDisplayData}
+                    isState={isDisplayData}
+                    checkState={'chronological'}
+                    options={['grouped by climber', 'chronological order']}
+                />
+                <PopupInstructions data={props.data} filter={filter} />
+            </div>
+            <h1>Hard Sport Climbs (Woman)</h1>
+            {isDisplayData === 'chronological' ? (
+                <ChronologicalSends filter={filter} data={props.data} isGradingSystem={isGradingSystem} />
+            ) : (
+                <RankedClimberSends filter={filter} data={props.data} isGradingSystem={isGradingSystem} />
+            )}
         </div>
-    )
+    );
 }
 
 export default SportWomanPage;

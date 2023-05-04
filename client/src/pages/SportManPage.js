@@ -40,7 +40,7 @@ function SportManPage(props) {
                     checkState={'chronological'}
                     options={['grouped by climber', 'chronological order']}
                 />
-                <PopupInstructions />
+                <PopupInstructions data={props.data} filter={filter} />
             </div>
             <h1>Hard Sport Climbs (Man)</h1>
             {isDisplayData === 'chronological' ? (

@@ -1,6 +1,5 @@
 import styles from './Toggle.module.css';
 function Toggle(props) {
-    console.log('Toggle props:', props);
     return (
         <section className={styles.gradeToggler}>
             <div className={styles.toggle}>

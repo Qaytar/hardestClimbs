@@ -14,7 +14,6 @@ function App() {
       .then(res => res.json())
       .then((data) => {
         setBackendData(data);
-        //console.log("data:", data);
       });
   }, []);
 

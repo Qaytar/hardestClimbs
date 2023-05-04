@@ -1,6 +1,6 @@
 import { filterSends, rankClimbers, handleMouseEnter, handleMouseLeave } from '../utils/functionsHelpers';
 import styles from './ComponentStyles.module.css';
-const { rankedEuropeanGrades } = require('../utils/rankedGrades');
+const { highestGrades } = require('../utils/rankedGrades');
 
 
 function RankedClimberSends(props) {
@@ -9,17 +9,15 @@ function RankedClimberSends(props) {
     //calls rankClimbers to obtain the ranking of the climbers included in the filteredSends
     const rankedClimbers = rankClimbers(filteredSends);
 
-    const discipline = props.filter.discipline;
-    const highestGrade = rankedEuropeanGrades[discipline][0];
     return (
         <div>
             {rankedClimbers.map((rankedClimber, index) => (
                 <div key={index}>
                     <p className={styles.rankClimber}>{rankedClimber.climber.name}</p>
                     <p className={styles.rankSend}>
-                        {rankedClimber.sends.sport.map((route, index) => (
+                        {rankedClimber.sends[props.filter.discipline].map((route, index) => (
                             <span key={index}>
-                                <span className={(route.europeanGrade === highestGrade) ? styles.highestGrade : ''}>
+                                <span className={(highestGrades[props.filter.discipline][props.filter.gender].includes(route.europeanGrade)) && styles.highestGrade}>
                                     {route.name}
                                 </span>&nbsp;
                                 <span
@@ -27,14 +25,14 @@ function RankedClimberSends(props) {
                                     onMouseLeave={handleMouseLeave}
                                     className={` 
                                         ${styles.grade} 
-                                        ${(route.europeanGrade === highestGrade) && styles.highestGrade}
+                                        ${(highestGrades[props.filter.discipline][props.filter.gender].includes(route.europeanGrade)) && styles.highestGrade}
                                         ${(route.europeanGrade.includes(' or ')) && styles.underlineForPopup} 
                                     `}
                                 >
                                     ({props.isGradingSystem === 'american' ? route.americanGrade : route.europeanGrade})
                                     {route.note && (<span className={styles.gradeNotePopup}>{route.note}</span>)}
                                 </span>
-                                {index !== rankedClimber.sends.sport.length - 1 ? ', ' : ''}&nbsp;&nbsp;
+                                {index !== rankedClimber.sends[props.filter.discipline].length - 1 ? ', ' : ''}&nbsp;&nbsp;
                             </span>
                         ))}
                     </p>

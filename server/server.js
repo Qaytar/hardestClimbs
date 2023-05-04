@@ -13,7 +13,7 @@ app.get('/api', async (req, res) => {
             .populate('route')
             .exec();
 
-        //console.log("serverData:", serverData);
+
         res.json(serverData);
     } catch (error) {
         console.error("Error fetching data:", error);
