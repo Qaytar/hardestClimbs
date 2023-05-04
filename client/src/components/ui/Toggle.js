@@ -10,14 +10,11 @@ function Toggle(props) {
                 </label>
             </div>
             <div className={styles.toggleLabel}>
-                {console.log(props.isState)}
                 <label for="toggle">
                     <i>switch to {props.isState === props.checkState ? props.options[0] : props.options[1]}</i>
                 </label>
             </div>
         </section>
-
-
     )
 }
 

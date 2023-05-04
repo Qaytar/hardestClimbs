@@ -8,23 +8,31 @@ function ChronologicalSends(props) {
     const filteredSends = filterSends(props.data, props.filter.discipline, props.filter.gender, props.filter.limit);
     const discipline = props.filter.discipline;
     const highestGrade = rankedEuropeanGrades[discipline][0];
+
+
     return (
         <div>
-            {
-                filteredSends.map((send, index) => (
-                    <p key={index}>
-                        <span className={(send.route.europeanGrade === highestGrade) ? styles.highestGrade : ''}>
-                            {send.route.name}&nbsp;
-                        </span>
-                        <span className={styles.grade} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-                            <span className={(send.route.europeanGrade === highestGrade) ? styles.highestGrade : ''}>
-                                ({props.isGradingSystem === 'american' ? send.route.americanGrade : send.route.europeanGrade})
-                            </span>
-                            {send.route.note && (<span className={styles.gradeNotePopup}>{send.route.note}</span>)}
-                        </span>&nbsp; - &nbsp;&nbsp;by {send.climber.name} on <span className={styles.chronoDate}>{send.date}</span>
-                    </p>
-                ))
-            }
+            {filteredSends.map((send, index) => (
+                <p key={index}>
+                    <span className={(send.route.europeanGrade === highestGrade) ? styles.highestGrade : ''}>
+                        {send.route.name}&nbsp;
+                    </span>
+                    <span
+                        onMouseEnter={handleMouseEnter}
+                        onMouseLeave={handleMouseLeave}
+                        className={`
+                            ${styles.grade}     
+                            ${(send.route.europeanGrade.includes(' or ')) && styles.underlineForPopup}                             
+                            ${(send.route.europeanGrade === highestGrade) && styles.highestGrade}
+                        `}
+                    >
+                        ({props.isGradingSystem === 'american' ? send.route.americanGrade : send.route.europeanGrade})
+                        {send.route.note && (<span className={styles.gradeNotePopup}>{send.route.note}</span>)}
+                    </span>
+                    &nbsp; - &nbsp;&nbsp;
+                    by {send.climber.name} on <span className={styles.chronoDate}>{send.date}</span>
+                </p>
+            ))}
         </div>
     )
 

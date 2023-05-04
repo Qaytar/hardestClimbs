@@ -1,19 +1,39 @@
+.instrPopup {
+    left: 0 !important;
+    margin-top: 20px !important;
+}
+
 .gradeNotePopup {
     position: absolute;
     display: none;
-    background-Color: rgba(0, 0, 0, 0.7);
+    background-Color: #ffb78d;
     color: white;
-    padding: 5px;
+    padding: 20px;
     border-Radius: 5px;
     font-Size: 12px;
     left: 100%;
+    top: 100%;
+    margin-Top: 10px;
     margin-Left: 5px;
-    white-Space: nowrap
+    white-Space: normal;
+    width: 200px;
+    text-align: left;
+    z-index: 1000;
 }
+
 
 .grade {
     position: relative
 }
+
+.underlineForPopup {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    cursor: pointer;
+    text-decoration-color: #ff8e4d;
+}
+
+
 
 .rankClimber {
     text-align: left;

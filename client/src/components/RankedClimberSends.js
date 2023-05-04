@@ -22,10 +22,16 @@ function RankedClimberSends(props) {
                                 <span className={(route.europeanGrade === highestGrade) ? styles.highestGrade : ''}>
                                     {route.name}
                                 </span>&nbsp;
-                                <span className={styles.grade} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-                                    <span className={(route.europeanGrade === highestGrade) ? styles.highestGrade : ''}>
-                                        ({props.isGradingSystem === 'american' ? route.americanGrade : route.europeanGrade})
-                                    </span>
+                                <span
+                                    onMouseEnter={handleMouseEnter}
+                                    onMouseLeave={handleMouseLeave}
+                                    className={` 
+                                        ${styles.grade} 
+                                        ${(route.europeanGrade === highestGrade) && styles.highestGrade}
+                                        ${(route.europeanGrade.includes(' or ')) && styles.underlineForPopup} 
+                                    `}
+                                >
+                                    ({props.isGradingSystem === 'american' ? route.americanGrade : route.europeanGrade})
                                     {route.note && (<span className={styles.gradeNotePopup}>{route.note}</span>)}
                                 </span>
                                 {index !== rankedClimber.sends.sport.length - 1 ? ', ' : ''}&nbsp;&nbsp;

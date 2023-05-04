@@ -1,0 +1,12 @@
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    align-items: center;
+    margin-top: 10px;
+    margin-right: 30px;
+}
+
+.noteInstructions {
+    display: flex;
+}
