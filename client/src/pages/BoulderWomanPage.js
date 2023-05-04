@@ -1,5 +1,10 @@
 import { filterSends } from '../utils/functionsHelpers';
+import React, { useState, useEffect } from 'react';
 function BoulderWomanPage(props) {
+    //Scrolls to the top of the page when the component is mounted
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
     return (
         <div>
             <h1>BoulderWomanPage</h1>

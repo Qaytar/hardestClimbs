@@ -1,8 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ChronologicalSends from '../components/ChronologicalSends';
 import RankedClimberSends from '../components/RankedClimberSends';
+import Toggle from '../components/ui/Toggle';
 
 function SportManPage(props) {
+    //Scrolls to the top of the page when the component is mounted
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     //Create a state variavle to display sends chronologicaly or grouped be ranked climbers
     const [isDisplayData, setIsDisplayData] = useState('chronological');
     //Creates a function to toggle the display of the data, it's called when the button is clicked
@@ -20,21 +26,25 @@ function SportManPage(props) {
     const filter = { discipline: 'sport', gender: 'man' }
     return (
         <div>
-            <button onClick={toggleGradeDisplay}>
-                {isGradingSystem === 'american' ? 'Change to European Grades' : 'Change to American Grades'}
-            </button>
-            <button onClick={toggleDisplayData}>
-                {isDisplayData === 'chronological' ? 'Change to grouped by climber' : 'Change to chronological order'}
-            </button>
-            <h1>SportManPage</h1>
-            {
-                isDisplayData === 'chronological' ? (
-                    <ChronologicalSends filter={filter} data={props.data} isGradingSystem={isGradingSystem} />
-                ) : (
-                    <RankedClimberSends filter={filter} data={props.data} isGradingSystem={isGradingSystem} />
-                )
-            }
+            <Toggle
+                onClickFunction={toggleGradeDisplay}
+                isState={isGradingSystem}
+                checkState={'american'}
+                options={['european grades', 'american grades']}
+            />
+            <Toggle
+                onClickFunction={toggleDisplayData}
+                isState={isDisplayData}
+                checkState={'chronological'}
+                options={['grouped by climber', 'chronological order']}
+            />
 
+            <h1>Hard Sport Climbs (Man)</h1>
+            {isDisplayData === 'chronological' ? (
+                <ChronologicalSends filter={filter} data={props.data} isGradingSystem={isGradingSystem} />
+            ) : (
+                <RankedClimberSends filter={filter} data={props.data} isGradingSystem={isGradingSystem} />
+            )}
         </div>
     );
 }

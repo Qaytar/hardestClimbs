@@ -14,3 +14,25 @@
 .grade {
     position: relative
 }
+
+.rankClimber {
+    text-align: left;
+    margin-left: 25%;
+    margin-right: 20%;
+    margin-bottom: 3px;
+    color: #ff8e4d;
+}
+
+.rankSend {
+    text-align: left;
+    margin-left: 27%;
+    margin-right: 20%;
+}
+
+.chronoDate {
+    color: #ff8e4d;
+}
+
+.highestGrade {
+    color: #fd5d00;
+}

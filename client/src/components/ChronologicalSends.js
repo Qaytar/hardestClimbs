@@ -1,22 +1,27 @@
 import { filterSends, handleMouseEnter, handleMouseLeave } from '../utils/functionsHelpers';
-import classes from './Sends.module.css';
+import styles from './Sends.module.css';
+const { rankedEuropeanGrades } = require('../utils/rankedGrades');
 
 
 function ChronologicalSends(props) {
     //calls filteredSend to obtain the sub set off all the sends relevant to this page
     const filteredSends = filterSends(props.data, props.filter.discipline, props.filter.gender, props.filter.limit);
-
+    const discipline = props.filter.discipline;
+    const highestGrade = rankedEuropeanGrades[discipline][0];
     return (
         <div>
             {
                 filteredSends.map((send, index) => (
                     <p key={index}>
-                        {send.route.name}
-                        (<span className={classes.grade} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-                            {props.isGradingSystem === 'american' ? send.route.americanGrade : send.route.europeanGrade}
-                            {send.route.note && (<span className={classes.gradeNotePopup}>{send.route.note}</span>)}
-                        </span>)
-                        , by {send.climber.name} on {send.date}
+                        <span className={(send.route.europeanGrade === highestGrade) ? styles.highestGrade : ''}>
+                            {send.route.name}&nbsp;
+                        </span>
+                        <span className={styles.grade} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+                            <span className={(send.route.europeanGrade === highestGrade) ? styles.highestGrade : ''}>
+                                ({props.isGradingSystem === 'american' ? send.route.americanGrade : send.route.europeanGrade})
+                            </span>
+                            {send.route.note && (<span className={styles.gradeNotePopup}>{send.route.note}</span>)}
+                        </span>&nbsp; - &nbsp;&nbsp;by {send.climber.name} on <span className={styles.chronoDate}>{send.date}</span>
                     </p>
                 ))
             }

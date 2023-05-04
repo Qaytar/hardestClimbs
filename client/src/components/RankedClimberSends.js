@@ -1,5 +1,6 @@
 import { filterSends, rankClimbers, handleMouseEnter, handleMouseLeave } from '../utils/functionsHelpers';
-import classes from './Sends.module.css';
+import styles from './Sends.module.css';
+const { rankedEuropeanGrades } = require('../utils/rankedGrades');
 
 
 function RankedClimberSends(props) {
@@ -8,24 +9,31 @@ function RankedClimberSends(props) {
     //calls rankClimbers to obtain the ranking of the climbers included in the filteredSends
     const rankedClimbers = rankClimbers(filteredSends);
 
+    const discipline = props.filter.discipline;
+    const highestGrade = rankedEuropeanGrades[discipline][0];
     return (
         <div>
-            {
-                rankedClimbers.map((rankedClimber, index) => (
-                    <p key={index}>
-                        {rankedClimber.climber.name} - {
-                            rankedClimber.sends.sport.map((route, index) => (
-                                <span key={index}>
+            {rankedClimbers.map((rankedClimber, index) => (
+                <div key={index}>
+                    <p className={styles.rankClimber}>{rankedClimber.climber.name}</p>
+                    <p className={styles.rankSend}>
+                        {rankedClimber.sends.sport.map((route, index) => (
+                            <span key={index}>
+                                <span className={(route.europeanGrade === highestGrade) ? styles.highestGrade : ''}>
                                     {route.name}
-                                    <span className={classes.grade} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+                                </span>&nbsp;
+                                <span className={styles.grade} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+                                    <span className={(route.europeanGrade === highestGrade) ? styles.highestGrade : ''}>
                                         ({props.isGradingSystem === 'american' ? route.americanGrade : route.europeanGrade})
-                                        {route.note && (<span className={classes.gradeNotePopup}>{route.note}</span>)}
                                     </span>
-                                </span>))
-                        }
+                                    {route.note && (<span className={styles.gradeNotePopup}>{route.note}</span>)}
+                                </span>
+                                {index !== rankedClimber.sends.sport.length - 1 ? ', ' : ''}&nbsp;&nbsp;
+                            </span>
+                        ))}
                     </p>
-                ))
-            }
+                </div>
+            ))}
         </div>
     )
 
