@@ -1,5 +1,5 @@
 import { filterSends, handleMouseEnter, handleMouseLeave } from '../utils/functionsHelpers';
-import styles from './Sends.module.css';
+import styles from './ComponentStyles.module.css';
 const { rankedEuropeanGrades } = require('../utils/rankedGrades');
 
 

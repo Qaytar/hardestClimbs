@@ -1,4 +1,4 @@
-import classes from '../components/Sends.module.css';
+import styles from '../components/ComponentStyles.module.css';
 
 /**filterSends
  * Filters and sorts sends based on discipline, gender, and an optional limit.
@@ -109,13 +109,13 @@ function countSendsByGrade(sends, gradeList) {
  */
 
 export const handleMouseEnter = (event) => {
-    const popup = event.target.querySelector(`.${classes.gradeNotePopup}`);
+    const popup = event.target.querySelector(`.${styles.gradeNotePopup}`);
     if (popup) {
         popup.style.display = 'block';
     }
 };
 export const handleMouseLeave = (event) => {
-    const popup = event.target.querySelector(`.${classes.gradeNotePopup}`);
+    const popup = event.target.querySelector(`.${styles.gradeNotePopup}`);
     if (popup) {
         popup.style.display = 'none';
     }
