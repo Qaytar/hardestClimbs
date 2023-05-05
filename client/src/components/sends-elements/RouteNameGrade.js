@@ -1,5 +1,5 @@
 import styles from '../ComponentStyles.module.css';
-import { handleMouseEnter, handleMouseLeave } from '../../utils/functionsHelpers';
+import { handleMouseEnter, handleMouseLeave, handleClick } from '../../utils/functionsHelpers';
 const { highestGrades } = require('../../utils/rankedGrades');
 
 function RouteNameGrade(props) {
@@ -7,6 +7,7 @@ function RouteNameGrade(props) {
         <span
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
+            onClick={handleClick}
             className={`
                 ${styles.grade}     
                 ${(props.note) && styles.underlineForPopup}                             

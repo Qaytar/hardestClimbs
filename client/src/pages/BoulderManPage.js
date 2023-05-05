@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import ChronologicalSends from '../components/ChronologicalSends';
 import RankedClimberSends from '../components/RankedClimberSends';
 import Toggle from '../components/ui/Toggle';
-import PopupInstructions from '../components/PopupInstructions';
+import PopupInstructions from '../components/ui/PopupInstructions';
 
 function BoulderManPage(props) {
     //Scrolls to the top of the page when the component is mounted

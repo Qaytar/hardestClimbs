@@ -120,3 +120,10 @@ export const handleMouseLeave = (event) => {
         popup.style.display = 'none';
     }
 };
+
+export const handleClick = (event) => {
+    const popup = event.target.querySelector(`.${styles.gradeNotePopup}`);
+    if (popup) {
+        popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
+    }
+};

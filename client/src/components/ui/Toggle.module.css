@@ -1,3 +1,8 @@
+.gradeToggler *:focus {
+    outline: none;
+}
+
+
 .content {
     display: flex;
 }
@@ -29,7 +34,13 @@
     display: none;
 }
 
+.toggle {
+    display: flex;
+    align-items: center;
+}
+
 .slider {
+    display: flex;
     position: absolute;
     cursor: pointer;
     top: 0;
