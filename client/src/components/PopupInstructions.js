@@ -15,7 +15,7 @@ function PopupInstructions(props) {
     return (
         <div className={styles.wrapper}>
             {checkIfNotes() ? (
-                <p>
+                <p className={styles.send}>
                     <i className={styles.noteInstructions}>
                         <span
                             onMouseEnter={handleMouseEnter}
@@ -28,8 +28,9 @@ function PopupInstructions(props) {
 
                     </i>
                 </p>
-            ) : null}
-        </div>
+            ) : null
+            }
+        </div >
     )
 }
 

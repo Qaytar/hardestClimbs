@@ -2,12 +2,12 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-p,
+/* p,
 label {
     color: rgb(119, 119, 119);
     font-weight: 300;
     text-align: center;
-}
+} */
 
 h1 {
     font-weight: 100;
