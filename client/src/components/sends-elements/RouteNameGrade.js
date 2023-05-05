@@ -9,7 +9,7 @@ function RouteNameGrade(props) {
             onMouseLeave={handleMouseLeave}
             className={`
                 ${styles.grade}     
-                ${(props.EUGrade.includes(' or ')) && styles.underlineForPopup}                             
+                ${(props.note) && styles.underlineForPopup}                             
                 ${(highestGrades[props.discipline][props.gender].includes(props.EUGrade)) && styles.highestGrade}
             `}
         >

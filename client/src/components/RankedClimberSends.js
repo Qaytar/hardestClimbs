@@ -11,15 +11,15 @@ function RankedClimberSends(props) {
     const rankedClimbers = rankClimbers(filteredSends);
 
     return (
-        <div>
+        <div className={`container ${styles.send}`}>
             {rankedClimbers.map((rankedClimber, index) => (
                 <div key={index}>
-                    <p className={styles.rankClimber}>
-                        {rankedClimber.climber.name}
-                    </p>
-                    <p className={styles.rankSend}>
+                    <div className={`row ${styles.rankClimber}`}>
+                        <span>{rankedClimber.climber.name}</span>
+                    </div>
+                    <div className={`row ${styles.rankSend}`}>
                         {rankedClimber.sends[props.filter.discipline].map((route, index) => (
-                            <span key={index}>
+                            <div className='col-12' key={index}>
                                 <RouteNameGrade
                                     EUGrade={route.europeanGrade}
                                     USGrade={route.americanGrade}
@@ -30,9 +30,9 @@ function RankedClimberSends(props) {
                                     routeName={route.name}
                                 />
                                 {index !== rankedClimber.sends[props.filter.discipline].length - 1 ? ', ' : ''}&nbsp;&nbsp;
-                            </span>
+                            </div>
                         ))}
-                    </p>
+                    </div>
                 </div>
             ))}
         </div>

@@ -9,8 +9,8 @@ function ChronologicalSends(props) {
 
     return (
         <div className="container">
-            {filteredSends.map((send) => (
-                <div className={`row ${styles.chronoRow}`}>
+            {filteredSends.map((send, index) => (
+                <div key={index} className={`row ${styles.chronoRow}`}>
                     <div className={`col-md-6 ${styles.chronoNameGrade} ${styles.send}`}>
                         <RouteNameGrade
                             EUGrade={send.route.europeanGrade}

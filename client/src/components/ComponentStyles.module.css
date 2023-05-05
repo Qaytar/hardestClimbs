@@ -55,24 +55,31 @@
 /*--- used in the component RankedClimberSends --- */
 /* styles the name of the climber */
 .rankClimber {
-    text-align: left;
-    margin-left: 25%;
-    margin-right: 20%;
-    margin-bottom: 3px;
+    margin-top: 25px;
+    margin-bottom: 5px;
     color: #ff8e4d;
+    margin-left: 20%
 }
 
 /*--- used in the component RankedClimberSends --- */
 /* styles the rest of the information of a given climber (the send information) */
 .rankSend {
-    text-align: left;
-    margin-left: 27%;
-    margin-right: 20%;
+    margin-left: 25%;
+    margin-right: 5%;
+}
+
+@media screen and (min-width: 768px) {
+    .rankSend {
+        margin-left: 40%;
+    }
+
+    .rankClimber {
+        margin-left: 35%
+    }
 }
 
 /*--- used in the component ChronologicalSends --- */
 /* styles the date of the send */
-/* .chronoDate {} */
 
 .chronoNameGrade {
     text-align: right;
@@ -92,6 +99,7 @@
     margin-bottom: 20px;
 }
 
+/* Styles smaller screens for the choronoligical sends */
 @media screen and (max-width: 768px) {
     .chronoNameGrade {
         color: #ff8e4d;
