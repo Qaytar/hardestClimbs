@@ -1,3 +1,7 @@
 .customNavbar {
-    background-color: #ff8e4d;
+    background-color: transparent;
+}
+
+.brand {
+    color: #ff8e4d;
 }

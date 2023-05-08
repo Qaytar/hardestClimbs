@@ -3,6 +3,7 @@ import styles from './HomePage.module.css';
 import ChronologicalSends from '../components/ChronologicalSends';
 import MainButton from '../components/ui/MainButton';
 import Toggle from '../components/ui/Toggle';
+import NavBar from '../components/layout/NavBar';
 
 
 function HomePage(props) {
@@ -21,7 +22,7 @@ function HomePage(props) {
         <div>
             <section>
                 <div className={styles.image}>
-                    <img src='https://57hours.com/wp-content/uploads/2019/04/climbing-header-4-1920x600.jpg' />
+                    <NavBar />
                 </div>
             </section>
             <Toggle

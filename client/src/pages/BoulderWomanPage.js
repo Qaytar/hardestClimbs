@@ -3,6 +3,8 @@ import ChronologicalSends from '../components/ChronologicalSends';
 import RankedClimberSends from '../components/RankedClimberSends';
 import Toggle from '../components/ui/Toggle';
 import PopupInstructions from '../components/ui/PopupInstructions';
+import NavBar from '../components/layout/NavBar';
+import styles from './bannerPage.module.css';
 
 function BoulderWomanPage(props) {
     //Scrolls to the top of the page when the component is mounted
@@ -27,6 +29,9 @@ function BoulderWomanPage(props) {
     const filter = { discipline: 'boulder', gender: 'woman' }
     return (
         <div>
+            <div className={styles.boulderBanner}>
+                <NavBar />
+            </div>
             <div>
                 <Toggle
                     onClickFunction={toggleGradeDisplay}
