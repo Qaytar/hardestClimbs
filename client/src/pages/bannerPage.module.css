@@ -7,7 +7,7 @@
     background-repeat: no-repeat;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1300px) {
     .boulderBanner {
         background-position: 60% 0%;
     }
@@ -22,7 +22,7 @@
     background-repeat: no-repeat;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1300px) {
     .sportBanner {
         background-position: 0% 0%;
     }

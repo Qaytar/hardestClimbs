@@ -29,7 +29,11 @@ function SportManPage(props) {
     const filter = { discipline: 'sport', gender: 'man' }
     return (
         <div>
+            <div className={styles.sportBanner}>
+                <NavBar />
+            </div>
             <div>
+
                 <Toggle
                     onClickFunction={toggleGradeDisplay}
                     isState={isGradingSystem}
@@ -43,8 +47,8 @@ function SportManPage(props) {
                     options={['grouped by climber', 'chronological order']}
                 />
                 <PopupInstructions data={props.data} filter={filter} />
+                <h1>Hard Sport Climbs (Man)</h1>
             </div>
-            <h1>Hard Sport Climbs (Man)</h1>
             {isDisplayData === 'chronological' ? (
                 <ChronologicalSends filter={filter} data={props.data} isGradingSystem={isGradingSystem} />
             ) : (

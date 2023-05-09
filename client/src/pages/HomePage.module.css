@@ -1,15 +1,15 @@
 .image {
     width: 100vw;
     height: 100vh;
-    background: url('../utils/imagesTest/Default_close_up_boulder_on_a_opened_landscape_with_small_clim_0_061fadc6-6f6e-4184-ae77-3420fac628ff_1.jpg');
+    background: url('../utils/imagesTest/cropped_Default_close_up_boulder_on_a_opened_landscape_with_small_clim_0_061fadc6-6f6e-4184-ae77-3420fac628ff_1 (1).jpg');
     background-size: cover;
-    background-position: left calc(100% + 75px);
+    background-position: left 100%;
     background-repeat: no-repeat;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1100px) {
     .image {
-        background-position: 60% -10%
+        background-position: 30% 0%
     }
 }
 
