@@ -15,7 +15,6 @@ function PagesSubtitles(props) {
 
     return (
         <div className={styles.subTitles}>
-            <p><i>featuring the world's strongest</i></p>
             <p>
                 <i>
                     {`only ${climbersCount} athletes have climbed ${CutOffGrade} or harder,

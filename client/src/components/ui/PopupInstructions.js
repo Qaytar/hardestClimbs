@@ -13,7 +13,7 @@ function PopupInstructions() {
                 >
                     underlined text
                     <span className={`${styles.gradeNotePopup}`}>Yup, just like that :).</span>
-                </span>&nbsp;hidea extra info
+                </span>&nbsp;hides extra info
             </i>
         </div >
     )

@@ -9,6 +9,16 @@ const climbersCsvPath = path.join(__dirname, 'climbers.csv');
 const routesCsvPath = path.join(__dirname, 'routes.csv');
 const sendsMappingCsvPath = path.join(__dirname, 'sends_mapping.csv');
 
+// Add parseDate function here
+const parseDate = (dateStr) => {
+    const parts = dateStr.split('-');
+    // This will map 'Jan' to 0, 'Feb' to 1, etc.
+    const monthIndex = new Date(Date.parse(parts[0] + " 1, 2012")).getMonth();
+    // Assumption: the year is in the 2000s.
+    const year = 2000 + parseInt(parts[1], 10);
+    return new Date(year, monthIndex);
+};
+
 const readCSV = async (csvPath) => {
     try {
         const jsonArray = await csvtojson().fromFile(csvPath);
@@ -40,7 +50,7 @@ const importSends = async (sendsMapping) => {
         const send = new Send({
             climber: climber._id,
             route: route._id,
-            date: sendMapping.date
+            date: parseDate(sendMapping.date)
         });
 
         try {
@@ -51,7 +61,6 @@ const importSends = async (sendsMapping) => {
         }
     }
 };
-
 //Connects to mongoDb
 const dbUrl = 'mongodb://127.0.0.1:27017/hardestClimbsLocal';
 mongoose.connect(dbUrl)
