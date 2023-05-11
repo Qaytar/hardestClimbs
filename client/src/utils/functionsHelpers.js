@@ -102,6 +102,29 @@ function countSendsByGrade(sends, gradeList) {
 
     return gradeCount;
 }
+
+/**countClimbers
+ * Two functions to handle the hover effect over the grade to display the note
+ * @param {Array} sendsArray - An array of sends objects to count climbers from.
+ * @param {Array} targetGrades - (optional) If present, it will return the number of climbers that climbed at least 1 route of any of the grades within the array.
+ *  
+ */
+export const countClimbers = (sendsArray, targetGrades) => {
+    const uniqueClimbers = new Set();
+
+    for (let send of sendsArray) {
+        if (send.climber) {
+            if (!targetGrades || (send.route && targetGrades.includes(send.route.europeanGrade))) {
+                uniqueClimbers.add(send.climber._id.toString());
+            }
+        }
+    }
+
+    return uniqueClimbers.size;
+}
+
+
+
 /**hadleMouseEnter and handleMouseLeave
  * Two functions to handle the hover effect over the grade to display the note
  * @param {event} event - The event that triggers the function
@@ -127,3 +150,5 @@ export const handleClick = (event) => {
         popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
     }
 };
+
+

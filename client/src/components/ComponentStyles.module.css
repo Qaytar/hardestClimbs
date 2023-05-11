@@ -125,3 +125,12 @@
     font-weight: 300;
     font-size: smaller;
 }
+
+/*--- used in component PagesSubtitles --- */
+.subTitles {
+    color: black;
+    font-weight: 300;
+    text-align: center;
+    font-size: larger;
+    margin-bottom: 50px;
+}

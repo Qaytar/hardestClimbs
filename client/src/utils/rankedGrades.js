@@ -12,10 +12,46 @@ export const highestGrades = {
     sport:
     {
         woman: ['9b', '9b or 9b/+', '9b or 9a+'],
-        man: '9c',
+        man: ['9c'],
     },
     boulder: {
         man: ['9A', '9A or 8C+'],
-        woman: '8C'
+        woman: ['8C']
+    }
+}
+
+export const AmericanHighestGrades = {
+    sport:
+    {
+        woman: ['5.15b', '5.15b or 5.15b/c', '5.15b or 5.15a'],
+        man: ['5.15d'],
+    },
+    boulder: {
+        man: ['V17', 'V17 or V16'],
+        woman: ['V15']
+    }
+}
+
+export const cutOffGrades = {
+    sport:
+    {
+        woman: ['5.15a'],
+        man: ['9b+'],
+    },
+    boulder: {
+        man: ['8C+'],
+        woman: ['8B+']
+    }
+}
+
+export const AmericanCutOffGrades = {
+    sport:
+    {
+        woman: ['9a+'],
+        man: ['5.15c'],
+    },
+    boulder: {
+        man: ['V16'],
+        woman: ['V14']
     }
 }

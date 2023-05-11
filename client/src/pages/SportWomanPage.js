@@ -5,6 +5,7 @@ import Toggle from '../components/ui/Toggle';
 import PopupInstructions from '../components/ui/PopupInstructions';
 import NavBar from '../components/layout/NavBar';
 import styles from './bannerPage.module.css';
+import PagesSubtitles from '../components/PagesSubtitles';
 
 function SportWomanPage(props) {
     //Scrolls to the top of the page when the component is mounted
@@ -26,7 +27,9 @@ function SportWomanPage(props) {
         setIsGradingSystem(isGradingSystem === 'european' ? 'american' : 'european');
     };
 
+
     const filter = { discipline: 'sport', gender: 'woman' }
+
     return (
         <div>
             <div className={styles.sportBanner}>
@@ -45,15 +48,19 @@ function SportWomanPage(props) {
                     checkState={'chronological'}
                     options={['grouped by climber', 'chronological order']}
                 />
-                <PopupInstructions data={props.data} filter={filter} />
+                <PopupInstructions />
             </div>
             <h1>Hard Sport Climbs (Woman)</h1>
-            {isDisplayData === 'chronological' ? (
-                <ChronologicalSends filter={filter} data={props.data} isGradingSystem={isGradingSystem} />
-            ) : (
-                <RankedClimberSends filter={filter} data={props.data} isGradingSystem={isGradingSystem} />
-            )}
-        </div>
+            <PagesSubtitles filter={filter} data={props.data} isGradingSystem={isGradingSystem} />
+
+            {
+                isDisplayData === 'chronological' ? (
+                    <ChronologicalSends filter={filter} data={props.data} isGradingSystem={isGradingSystem} />
+                ) : (
+                    <RankedClimberSends filter={filter} data={props.data} isGradingSystem={isGradingSystem} />
+                )
+            }
+        </div >
     );
 }
 
