@@ -35,7 +35,7 @@ export const AmericanHighestGrades = {
 export const cutOffGrades = {
     sport:
     {
-        woman: ['5.15a'],
+        woman: ['9a+'],
         man: ['9b+'],
     },
     boulder: {
@@ -47,7 +47,7 @@ export const cutOffGrades = {
 export const AmericanCutOffGrades = {
     sport:
     {
-        woman: ['9a+'],
+        woman: ['5.15a'],
         man: ['5.15c'],
     },
     boulder: {

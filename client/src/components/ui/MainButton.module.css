@@ -1,10 +1,10 @@
 .mainButton {
     display: inline-block;
     background: transparent;
-    border: 0px solid #ff8e4d;
+    border: 0.5px solid #ff8e4d;
     color: #ff8e4d;
     font-size: 16px;
-    padding: 3px 20px;
+    padding: 3px 10px;
     cursor: pointer;
     text-decoration: none;
     transition: all 0.3s ease;

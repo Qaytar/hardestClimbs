@@ -14,7 +14,7 @@ function SportManPage(props) {
     }, []);
 
     //Create a state variavle to display sends chronologicaly or grouped be ranked climbers
-    const [isDisplayData, setIsDisplayData] = useState('chronological');
+    const [isDisplayData, setIsDisplayData] = useState('byClimber');
     //Creates a function to toggle the display of the data, it's called when the button is clicked
     const toggleDisplayData = () => {
         setIsDisplayData(isDisplayData === 'chronological' ? 'byClimber' : 'chronological');

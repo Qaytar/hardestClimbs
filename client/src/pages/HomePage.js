@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import styles from './HomePage.module.css';
 import ChronologicalSends from '../components/ChronologicalSends';
 import MainButton from '../components/ui/MainButton';
@@ -14,27 +14,42 @@ function HomePage(props) {
         setIsGradingSystem(isGradingSystem === 'european' ? 'american' : 'european');
     };
 
+    // Create a ref for the Toggle component
+    const imageRef = useRef(null);
+    // Function to scroll to the Toggle component
+    const executeScroll = () => {
+        const y = imageRef.current.getBoundingClientRect().bottom;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+
+
     const SportWomanFilter = { discipline: 'sport', gender: 'woman', limit: 3 }
     const SportManFilter = { discipline: 'sport', gender: 'man', limit: 3 }
     const BouldertManFilter = { discipline: 'boulder', gender: 'man', limit: 3 }
     const BouldertWomanFilter = { discipline: 'boulder', gender: 'woman', limit: 3 }
+
     return (
         <div>
-            <section>
+            <section ref={imageRef}>
                 <div className={styles.image}>
                     <NavBar />
+                    <button onClick={executeScroll} className={styles.landPageBtn}>discover</button>
                 </div>
             </section>
-            <Toggle
-                onClickFunction={toggleGradeDisplay}
-                isState={isGradingSystem}
-                checkState={'american'}
-                options={['european grades', 'american grades']}
-            />
-
+            <div>
+                <Toggle
+                    onClickFunction={toggleGradeDisplay}
+                    isState={isGradingSystem}
+                    checkState={'american'}
+                    options={['european grades', 'american grades']}
+                />
+            </div>
+            <div>
+                <h1>Up to date information on the world's hardest climbs</h1>
+            </div>
             <section className={styles.contentWrapper}>
                 <div class="container text-center">
-                    <h4 className='mt-5 mb-3'>Sport Climbing</h4>
+                    <h4>Sport Climbing</h4>
                     <div class="row">
                         <div class="col-md">
                             <div className={styles.summaryTable}>
@@ -43,7 +58,7 @@ function HomePage(props) {
                             </div>
                             <MainButton to={'/SportWoman'}>view more</MainButton>
                         </div>
-                        <div class="col-md">
+                        <div className={`col-md ${styles.secondTable}`}>
                             <div className={styles.summaryTable}>
                                 <h5>Man</h5>
                                 <ChronologicalSends filter={SportManFilter} data={props.data} isGradingSystem={isGradingSystem} />
@@ -52,9 +67,7 @@ function HomePage(props) {
                         </div>
                     </div>
 
-                    <hr className={styles.gradientLine} />
-
-                    <h4 className='mt-5 mb-3'>Bouldering</h4>
+                    <h4>Bouldering</h4>
                     <div class="row">
                         <div class="col-md">
                             <div className={styles.summaryTable}>
@@ -63,7 +76,7 @@ function HomePage(props) {
                             </div>
                             <MainButton to={'/BoulderMan'}>view more</MainButton>
                         </div>
-                        <div class="col-md">
+                        <div className={`col-md ${styles.secondTable}`}>
                             <div className={styles.summaryTable}>
                                 <h5>Woman</h5>
                                 <ChronologicalSends filter={BouldertWomanFilter} data={props.data} isGradingSystem={isGradingSystem} />
