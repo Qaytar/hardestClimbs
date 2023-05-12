@@ -52,7 +52,6 @@ function SportWomanPage(props) {
             </div>
             <h1>Hard Sport Climbs (Woman)</h1>
             <PagesSubtitles filter={filter} data={props.data} isGradingSystem={isGradingSystem} />
-
             {
                 isDisplayData === 'chronological' ? (
                     <ChronologicalSends filter={filter} data={props.data} isGradingSystem={isGradingSystem} />
