@@ -9,12 +9,12 @@ import BoulderManPage from "./pages/BoulderManPage";
 function App() {
   const [backendData, setBackendData] = useState([]);
 
+
   useEffect(() => {
     fetch('/api')
       .then(res => res.json())
       .then((data) => {
         setBackendData(data);
-        console.log(data);
       });
   }, []);
 
