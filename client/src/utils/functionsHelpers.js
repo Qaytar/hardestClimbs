@@ -11,7 +11,11 @@ import styles from '../components/ComponentStyles.module.css';
 export function filterSends(data, discipline, gender, limit) {
     // Filter sends by the specified discipline and gender
     const filteredData = data.filter(function (send) {
-        return send.climber.gender === gender && send.route.discipline === discipline;
+        if (gender === 'all') {
+            return send.route.discipline === discipline;
+        } else {
+            return send.climber.gender === gender && send.route.discipline === discipline;
+        }
     });
 
     // Sort sends by date in descending order (most recent first)
@@ -32,6 +36,7 @@ export function filterSends(data, discipline, gender, limit) {
 
     return formattedData;
 }
+
 
 
 /**rankClimbers

@@ -1,4 +1,4 @@
-export const emptyFaqMetaData = {
+export const emptyFAQdata = {
     americanGrades: {
         sportMan: [
             { question: 'How many people have climbed 5.15d?', answer: '' },

@@ -32,8 +32,4 @@ function ChronologicalSends(props) {
 
 }
 
-//to do for next day. Style this component by having those 2 div-col have the size match exactly its content, then place them side by side also same height and u should be good. And then let it break to the next line on phones
-//will have to get rid of the current styles of those 2 divs, they make it seem like differnt heights
-//because they're no long <p> they lost their styling (color, font-wieght, etc.)
-
 export default ChronologicalSends;
