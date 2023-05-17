@@ -13,6 +13,7 @@ export const FaqContext = createContext();
 function App() {
   const [backendData, setBackendData] = useState([]);
   const [faqData, setFaqData] = useState({}); // Initialize the faqData state with an empty object
+  const [loading, setLoading] = useState(true); // Add a loading state
 
   useEffect(() => {
     fetch('/api')
@@ -20,11 +21,16 @@ function App() {
       .then((data) => {
         setBackendData(data);
         setFaqData(populateFAQdata(data));
+        setLoading(false); // Set loading to false after the data is fetched
       });
   }, []);
 
+  // Don't render the Routes until the data is fetched
+  if (loading) {
+    return <div></div>;
+  }
+
   return (
-    // Provide the faqData to all children of FaqContext.Provider
     <FaqContext.Provider value={faqData}>
       <Routes>
         <Route path="/" element={<HomePage data={backendData} />} />
@@ -36,5 +42,6 @@ function App() {
     </FaqContext.Provider>
   )
 }
+
 
 export default App;

@@ -6,6 +6,7 @@ import PopupInstructions from '../components/ui/PopupInstructions';
 import NavBar from '../components/layout/NavBar';
 import styles from './bannerPage.module.css';
 import PagesSubtitles from '../components/PagesSubtitles';
+import FAQ from '../components/FAQ';
 
 function SportWomanPage(props) {
     //Scrolls to the top of the page when the component is mounted
@@ -59,6 +60,9 @@ function SportWomanPage(props) {
                     <RankedClimberSends filter={filter} data={props.data} isGradingSystem={isGradingSystem} />
                 )
             }
+            <div>
+                <FAQ filter={'sportWoman'} isGradingSystem={isGradingSystem} />
+            </div>
         </div >
     );
 }

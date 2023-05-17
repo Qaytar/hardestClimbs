@@ -8,8 +8,8 @@ export const emptyFAQdata = {
             { question: 'Who is the strongest male sport climber?', answer: '' },
             { question: 'Who was the first to climb 5.15c sport climb?', answer: '' },
             { question: 'Who was the first to climb 5.15d sport climb?', answer: '' },
-            { question: "What's the most recent male 5.15c in sport climbing?", answer: '' },
-            { question: "What's the most recent male 5.15d in sport climbing?", answer: '' }
+            { question: "What's the most recent 5.15c male ascent in sport climbing?", answer: '' },
+            { question: "What's the most recent 5.15d male ascent in sport climbing?", answer: '' }
         ],
         sportWoman: [
             { question: 'How many woman have climbed 5.15b?', answer: '' },
@@ -18,8 +18,8 @@ export const emptyFAQdata = {
             { question: 'Who was the first woman to climb 5.15a sport climb?', answer: '' },
             { question: 'Who was the first woman to climb 5.15b sport climb?', answer: '' },
             { question: 'Who was the first woman to climb 5.15c sport climb?', answer: '' },
-            { question: "What's the most recent female 5.15a in sport climbing?", answer: '' },
-            { question: "What's the most recent female 5.15b in sport climbing?", answer: '' },
+            { question: "What's the most recent 5.15a female ascent in sport climbing?", answer: '' },
+            { question: "What's the most recent 5.15b female ascent in sport climbing?", answer: '' },
         ],
         boulderMan: [
             { question: 'How many people have climbed V16?', answer: '' },
@@ -29,8 +29,8 @@ export const emptyFAQdata = {
             { question: 'Who is the strongest male boulder climber?', answer: '' },
             { question: 'Who was the first to climb V16 boulder?', answer: '' },
             { question: 'Who was the first to climb V17 boulder?', answer: '' },
-            { question: "What's the most recent male V16 in bouldering?", answer: '' },
-            { question: "What's the most recent male V17 in bouldering?", answer: '' },
+            { question: "What's the most recent V16 male ascent in bouldering?", answer: '' },
+            { question: "What's the most recent V17 male ascent in bouldering?", answer: '' },
         ],
         boulderWoman: [
             { question: 'How many woman have climbed V14?', answer: '' },
@@ -39,8 +39,8 @@ export const emptyFAQdata = {
             { question: 'Who was the first woman to climb V14 boulder?', answer: '' },
             { question: 'Who was the first woman to climb V15 boulder?', answer: '' },
             { question: 'Who was the first woman to climb V16 boulder?', answer: '' },
-            { question: "What's the most recent female V14 in bouldering?", answer: '' },
-            { question: "What's the most recent female V15 in bouldering?", answer: '' },
+            { question: "What's the most recent V14 female ascent in bouldering?", answer: '' },
+            { question: "What's the most recent V15 female ascent in bouldering?", answer: '' },
         ],
     },
     europeanGrades: {
@@ -52,8 +52,8 @@ export const emptyFAQdata = {
             { question: 'Who is the strongest male sport climber?', answer: '' },
             { question: 'Who was the first to climb 9b+ sport climb?', answer: '' },
             { question: 'Who was the first to climb 9c sport climb?', answer: '' },
-            { question: "What's the most recent male 9b+ in sport climbing?", answer: '' },
-            { question: "What's the most recent male 9c in sport climbing?", answer: '' }
+            { question: "What's the most recent 9b+ male ascent in sport climbing?", answer: '' },
+            { question: "What's the most recent 9c male ascent in sport climbing?", answer: '' }
         ],
         sportWoman: [
             { question: 'How many woman have climbed 9b?', answer: '' },
@@ -62,8 +62,8 @@ export const emptyFAQdata = {
             { question: 'Who was the first woman to climb 9a+ sport climb?', answer: '' },
             { question: 'Who was the first woman to climb 9b sport climb?', answer: '' },
             { question: 'Who was the first woman to climb 9b+ sport climb?', answer: '' },
-            { question: "What's the most recent female 9a+ in sport climbing?", answer: '' },
-            { question: "What's the most recent female 9b in sport climbing?", answer: '' },
+            { question: "What's the most recent 9a+ female ascent in sport climbing?", answer: '' },
+            { question: "What's the most recent 9b female ascent in sport climbing?", answer: '' },
         ],
         boulderMan: [
             { question: 'How many people have climbed 8C+?', answer: '' },
@@ -73,8 +73,8 @@ export const emptyFAQdata = {
             { question: 'Who is the strongest male boulder climber?', answer: '' },
             { question: 'Who was the first to climb 8C+ boulder?', answer: '' },
             { question: 'Who was the first to climb 9A boulder?', answer: '' },
-            { question: "What's the most recent male 8C+ in bouldering?", answer: '' },
-            { question: "What's the most recent male 9A in bouldering?", answer: '' },
+            { question: "What's the most recent 8C+ male ascent in bouldering?", answer: '' },
+            { question: "What's the most recent 9A male ascent in bouldering?", answer: '' },
         ],
         boulderWoman: [
             { question: 'How many woman have climbed 8B+?', answer: '' },
@@ -83,8 +83,8 @@ export const emptyFAQdata = {
             { question: 'Who was the first woman to climb 8B+ boulder?', answer: '' },
             { question: 'Who was the first woman to climb 8C boulder?', answer: '' },
             { question: 'Who was the first woman to climb 8C+ boulder?', answer: '' },
-            { question: "What's the most recent female 8B+ in bouldering?", answer: '' },
-            { question: "What's the most recent female 8C in bouldering?", answer: '' }
+            { question: "What's the most recent 8B+ female ascent in bouldering?", answer: '' },
+            { question: "What's the most recent 8C female ascent in bouldering?", answer: '' }
         ],
     }
 };

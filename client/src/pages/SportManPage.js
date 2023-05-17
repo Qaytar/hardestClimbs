@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import ChronologicalSends from '../components/ChronologicalSends';
 import RankedClimberSends from '../components/RankedClimberSends';
 import Toggle from '../components/ui/Toggle';
@@ -6,7 +6,7 @@ import PopupInstructions from '../components/ui/PopupInstructions';
 import NavBar from '../components/layout/NavBar';
 import styles from './bannerPage.module.css';
 import PagesSubtitles from '../components/PagesSubtitles';
-import { FaqContext } from '../App.js' // import the context
+import FAQ from '../components/FAQ';
 
 function SportManPage(props) {
     //Scrolls to the top of the page when the component is mounted
@@ -14,7 +14,6 @@ function SportManPage(props) {
         window.scrollTo(0, 0);
     }, []);
 
-    const faqData = useContext(FaqContext); // use the context
 
     //Create a state variavle to display sends chronologicaly or grouped be ranked climbers
     const [isDisplayData, setIsDisplayData] = useState('byClimber');
@@ -60,17 +59,9 @@ function SportManPage(props) {
             ) : (
                 <RankedClimberSends filter={filter} data={props.data} isGradingSystem={isGradingSystem} />
             )}
+
             <div>
-                <h1>faq</h1>
-                {faqData && faqData.europeanGrades && faqData.europeanGrades.sportMan ? (
-                    <>
-                        <div>
-                            <pre>{JSON.stringify(faqData, null, 2)}</pre>
-                        </div>
-                    </>
-                ) : (
-                    <p>Loading...</p>
-                )}
+                <FAQ filter={'sportMan'} isGradingSystem={isGradingSystem} />
             </div>
 
         </div>

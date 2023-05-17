@@ -216,8 +216,8 @@ export function populateFAQdata(data) {
 
     //sportMan
     const answerFirst9bPlus = climbersByDate(sportManData, '9b+', 'first');
-    FAQdata.europeanGrades.sportMan[5].answer = `On ${answerFirst9bPlus.date}, ${formatList(answerFirst9bPlus.names)} became the first to climb 9c (${answerFirst9bPlus.routeName})`;
-    FAQdata.americanGrades.sportMan[5].answer = `On ${answerFirst9bPlus.date}, ${formatList(answerFirst9bPlus.names)} became the first to climb 5.15d (${answerFirst9bPlus.routeName})`;
+    FAQdata.europeanGrades.sportMan[5].answer = `On ${answerFirst9bPlus.date}, ${formatList(answerFirst9bPlus.names)} became the first to climb 9b+ (${answerFirst9bPlus.routeName})`;
+    FAQdata.americanGrades.sportMan[5].answer = `On ${answerFirst9bPlus.date}, ${formatList(answerFirst9bPlus.names)} became the first to climb 5.15c (${answerFirst9bPlus.routeName})`;
 
     const answerFirst9c = climbersByDate(sportManData, '9c', 'first');
     FAQdata.europeanGrades.sportMan[6].answer = `On ${answerFirst9c.date}, ${formatList(answerFirst9c.names)} became the first to climb 9c (${answerFirst9c.routeName})`;
@@ -263,8 +263,8 @@ export function populateFAQdata(data) {
 
     //sportMan     
     const answerRecent9bPlus = climbersByDate(sportData, '9b+', 'recent');
-    FAQdata.europeanGrades.sportMan[7].answer = `The most recent 9c climb was on ${answerRecent9bPlus.date}, by ${formatList(answerRecent9bPlus.names)} (${answerRecent9bPlus.routeName})`;
-    FAQdata.americanGrades.sportMan[7].answer = `The most recent 5.15d climb was on ${answerRecent9bPlus.date}, by ${formatList(answerRecent9bPlus.names)} (${answerRecent9bPlus.routeName})`;
+    FAQdata.europeanGrades.sportMan[7].answer = `The most recent 9b+ climb was on ${answerRecent9bPlus.date}, by ${formatList(answerRecent9bPlus.names)} (${answerRecent9bPlus.routeName})`;
+    FAQdata.americanGrades.sportMan[7].answer = `The most recent 5.15c climb was on ${answerRecent9bPlus.date}, by ${formatList(answerRecent9bPlus.names)} (${answerRecent9bPlus.routeName})`;
 
     const answerRecent9c = climbersByDate(sportData, '9c', 'recent');
     FAQdata.europeanGrades.sportMan[8].answer = `The most recent 9c climb was on ${answerRecent9c.date}, by ${formatList(answerRecent9c.names)} (${answerRecent9c.routeName})`;
