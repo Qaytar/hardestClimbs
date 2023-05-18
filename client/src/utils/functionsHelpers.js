@@ -137,20 +137,20 @@ export const countClimbers = (sendsArray, targetGrades) => {
  */
 
 export const handleMouseEnter = (event) => {
-    const popup = event.target.querySelector(`.${styles.gradeNotePopup}`);
+    const popup = event.target.querySelector(`.${styles.popupNote}`);
     if (popup) {
         popup.style.display = 'block';
     }
 };
 export const handleMouseLeave = (event) => {
-    const popup = event.target.querySelector(`.${styles.gradeNotePopup}`);
+    const popup = event.target.querySelector(`.${styles.popupNote}`);
     if (popup) {
         popup.style.display = 'none';
     }
 };
 
 export const handleClick = (event) => {
-    const popup = event.target.querySelector(`.${styles.gradeNotePopup}`);
+    const popup = event.target.querySelector(`.${styles.popupNote}`);
     if (popup) {
         popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
     }

@@ -9,7 +9,6 @@ function ListSendsClimberGrouped(props) {
     const filteredSends = filterSends(props.data, props.filter.discipline, props.filter.gender)
     //calls rankClimbers to obtain the ranking of the climbers included in the filteredSends
     const rankedClimbers = rankClimbers(filteredSends);
-    console.log('rankedClimbers:', rankedClimbers);
 
     return (
         <div className={`container ${styles.send}`}>

@@ -3,6 +3,7 @@ import { handleMouseEnter, handleMouseLeave, handleClick } from '../../../utils/
 const { highestGrades } = require('../../../utils/rankedGrades');
 
 function RouteNameGrade(props) {
+    console.log(styles);
     return (
         <span
             onMouseEnter={handleMouseEnter}
@@ -18,7 +19,7 @@ function RouteNameGrade(props) {
             {props.routeName} ({props.isGradingSystem === 'american' ? props.USGrade : props.EUGrade})
 
             {/* //Displays a popup with the note if there is one */}
-            {props.note && (<span className={styles.gradeNotePopup}>{props.note}</span>)}
+            {props.note && (<span className={styles.popupNote}>{props.note}</span>)}
         </span>
     )
 }

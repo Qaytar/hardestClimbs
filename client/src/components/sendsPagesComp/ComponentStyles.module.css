@@ -2,7 +2,7 @@
 /*--- pop up styles --- */
 
 /* the popup itself */
-.gradeNotePopup {
+.popupNote {
     position: absolute;
     display: none;
     background-Color: #ffb78d;

@@ -42,7 +42,7 @@ export function fetchClimber(data, europeanGrade) {
  */
 //Helps populate questions like.. 'How many [grade] routes are there?'
 export function countRoutes(data, europeanGrade) {
-    console.log('data:', data);
+
     // Filter sends by given grade
     const routesWithGivenGrade = data.filter(send => send.route.europeanGrade.includes(europeanGrade));
 
