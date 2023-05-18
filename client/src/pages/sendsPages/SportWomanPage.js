@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import ChronologicalSends from '../components/ChronologicalSends';
-import RankedClimberSends from '../components/RankedClimberSends';
-import Toggle from '../components/ui/Toggle';
-import PopupInstructions from '../components/ui/PopupInstructions';
-import NavBar from '../components/layout/NavBar';
+import ChronologicalSends from '../../components/ChronologicalSends';
+import RankedClimberSends from '../../components/RankedClimberSends';
+import Toggle from '../../components/ui/Toggle';
+import PopupInstructions from '../../components/ui/PopupInstructions';
+import NavBar from '../../components/layout/NavBar';
 import styles from './bannerPage.module.css';
-import PagesSubtitles from '../components/PagesSubtitles';
-import FAQ from '../components/FAQ';
+import PagesSubtitles from '../../components/PagesSubtitles';
+import FAQ from '../../components/FAQ';
 
-function BoulderWomanPage(props) {
+function SportWomanPage(props) {
     //Scrolls to the top of the page when the component is mounted
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -28,11 +28,12 @@ function BoulderWomanPage(props) {
         setIsGradingSystem(isGradingSystem === 'european' ? 'american' : 'european');
     };
 
-    const filter = { discipline: 'boulder', gender: 'woman' }
+
+    const filter = { discipline: 'sport', gender: 'woman' }
 
     return (
         <div>
-            <div className={styles.boulderBanner}>
+            <div className={styles.sportBanner}>
                 <NavBar />
             </div>
             <div>
@@ -50,18 +51,20 @@ function BoulderWomanPage(props) {
                 />
                 <PopupInstructions />
             </div>
-            <h1>Hard Boulder Climbs (Woman)</h1>
+            <h1>Hard Sport Climbs (Woman)</h1>
             <PagesSubtitles filter={filter} data={props.data} isGradingSystem={isGradingSystem} />
-            {isDisplayData === 'chronological' ? (
-                <ChronologicalSends filter={filter} data={props.data} isGradingSystem={isGradingSystem} />
-            ) : (
-                <RankedClimberSends filter={filter} data={props.data} isGradingSystem={isGradingSystem} />
-            )}
+            {
+                isDisplayData === 'chronological' ? (
+                    <ChronologicalSends filter={filter} data={props.data} isGradingSystem={isGradingSystem} />
+                ) : (
+                    <RankedClimberSends filter={filter} data={props.data} isGradingSystem={isGradingSystem} />
+                )
+            }
             <div>
-                <FAQ filter={'boulderWoman'} isGradingSystem={isGradingSystem} />
+                <FAQ filter={filter} isGradingSystem={isGradingSystem} />
             </div>
-        </div>
+        </div >
     );
 }
 
-export default BoulderWomanPage;
+export default SportWomanPage;

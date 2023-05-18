@@ -48,10 +48,10 @@ function HomePage(props) {
                 <h1>Up to date information on the world's hardest climbs</h1>
             </div>
             <section className={styles.contentWrapper}>
-                <div class="container text-center">
+                <div className="container text-center">
                     <h4>Sport Climbing</h4>
-                    <div class="row">
-                        <div class="col-md">
+                    <div className="row">
+                        <div className="col-md">
                             <div className={styles.summaryTable}>
                                 <h5>Woman</h5>
                                 <ChronologicalSends filter={SportWomanFilter} data={props.data} isGradingSystem={isGradingSystem} />
@@ -68,8 +68,8 @@ function HomePage(props) {
                     </div>
 
                     <h4>Bouldering</h4>
-                    <div class="row">
-                        <div class="col-md">
+                    <div className="row">
+                        <div className="col-md">
                             <div className={styles.summaryTable}>
                                 <h5>Man</h5>
                                 <ChronologicalSends filter={BouldertManFilter} data={props.data} isGradingSystem={isGradingSystem} />

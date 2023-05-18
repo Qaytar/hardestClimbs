@@ -5,10 +5,11 @@ import styles from './ComponentStyles.module.css';
 
 function FAQ(props) {
     const faqData = useContext(FaqContext);
+    const filter = props.filter.discipline + props.filter.gender.charAt(0).toUpperCase() + props.filter.gender.slice(1);
 
     const relevantFaqs = {
-        europeanGrades: faqData.europeanGrades[props.filter],
-        americanGrades: faqData.americanGrades[props.filter],
+        europeanGrades: faqData.europeanGrades[filter],
+        americanGrades: faqData.americanGrades[filter],
     }
 
     // Convert FAQs to schema format
@@ -45,7 +46,7 @@ function FAQ(props) {
             </Helmet>
             <h2>FAQ</h2>
             <div className={styles.faqContainer}>
-                {(props.isGradingSystem === 'american' ? faqData.americanGrades[props.filter] : faqData.europeanGrades[props.filter]).map((faq, index) => (
+                {(props.isGradingSystem === 'american' ? faqData.americanGrades[filter] : faqData.europeanGrades[filter]).map((faq, index) => (
                     <div className={styles.faq} key={index}>
                         <h5>{faq.question}</h5>
                         <p>{faq.answer}</p>

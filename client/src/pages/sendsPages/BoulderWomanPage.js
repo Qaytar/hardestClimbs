@@ -1,19 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import ChronologicalSends from '../components/ChronologicalSends';
-import RankedClimberSends from '../components/RankedClimberSends';
-import Toggle from '../components/ui/Toggle';
-import PopupInstructions from '../components/ui/PopupInstructions';
-import NavBar from '../components/layout/NavBar';
+import ChronologicalSends from '../../components/ChronologicalSends';
+import RankedClimberSends from '../../components/RankedClimberSends';
+import Toggle from '../../components/ui/Toggle';
+import PopupInstructions from '../../components/ui/PopupInstructions';
+import NavBar from '../../components/layout/NavBar';
 import styles from './bannerPage.module.css';
-import PagesSubtitles from '../components/PagesSubtitles';
-import FAQ from '../components/FAQ';
+import PagesSubtitles from '../../components/PagesSubtitles';
+import FAQ from '../../components/FAQ';
 
-function SportManPage(props) {
+function BoulderWomanPage(props) {
     //Scrolls to the top of the page when the component is mounted
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
-
 
     //Create a state variavle to display sends chronologicaly or grouped be ranked climbers
     const [isDisplayData, setIsDisplayData] = useState('byClimber');
@@ -29,15 +28,14 @@ function SportManPage(props) {
         setIsGradingSystem(isGradingSystem === 'european' ? 'american' : 'european');
     };
 
-    const filter = { discipline: 'sport', gender: 'man' }
+    const filter = { discipline: 'boulder', gender: 'woman' }
 
     return (
         <div>
-            <div className={styles.sportBanner}>
+            <div className={styles.boulderBanner}>
                 <NavBar />
             </div>
             <div>
-
                 <Toggle
                     onClickFunction={toggleGradeDisplay}
                     isState={isGradingSystem}
@@ -51,22 +49,19 @@ function SportManPage(props) {
                     options={['grouped by climber', 'chronological order']}
                 />
                 <PopupInstructions />
-                <h1>Hard Sport Climbs (Man)</h1>
-                <PagesSubtitles filter={filter} data={props.data} isGradingSystem={isGradingSystem} />
             </div>
+            <h1>Hard Boulder Climbs (Woman)</h1>
+            <PagesSubtitles filter={filter} data={props.data} isGradingSystem={isGradingSystem} />
             {isDisplayData === 'chronological' ? (
                 <ChronologicalSends filter={filter} data={props.data} isGradingSystem={isGradingSystem} />
             ) : (
                 <RankedClimberSends filter={filter} data={props.data} isGradingSystem={isGradingSystem} />
             )}
-
             <div>
-                <FAQ filter={'sportMan'} isGradingSystem={isGradingSystem} />
+                <FAQ filter={filter} isGradingSystem={isGradingSystem} />
             </div>
-
         </div>
     );
 }
 
-export default SportManPage;
-
+export default BoulderWomanPage;

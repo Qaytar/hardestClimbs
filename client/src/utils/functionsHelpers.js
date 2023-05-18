@@ -108,8 +108,8 @@ function countSendsByGrade(sends, gradeList) {
     return gradeCount;
 }
 
-/**countClimbers
- * Two functions to handle the hover effect over the grade to display the note
+/**countClimbers, used in the subtitles of the pages
+ * Counts the number of unique climbers in an array of sends.
  * @param {Array} sendsArray - An array of sends objects to count climbers from.
  * @param {Array} targetGrades - (optional) If present, it will return the number of climbers that climbed at least 1 route of any of the grades within the array.
  *  
@@ -130,7 +130,7 @@ export const countClimbers = (sendsArray, targetGrades) => {
 
 
 
-/**hadleMouseEnter and handleMouseLeave
+/**hadleMouseEnter, handleMouseLeave and handleClick
  * Two functions to handle the hover effect over the grade to display the note
  * @param {event} event - The event that triggers the function
  *  

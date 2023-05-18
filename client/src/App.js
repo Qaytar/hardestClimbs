@@ -1,10 +1,10 @@
 import { Route, Routes } from "react-router-dom";
 import React, { useEffect, useState, createContext } from 'react'
 import HomePage from "./pages/HomePage";
-import SportWomanPage from "./pages/SportWomanPage";
-import SportManPage from "./pages/SportManPage";
-import BoulderWomanPage from "./pages/BoulderWomanPage";
-import BoulderManPage from "./pages/BoulderManPage";
+import SportWomanPage from "./pages/sendsPages/SportWomanPage";
+import SportManPage from "./pages/sendsPages/SportManPage";
+import BoulderWomanPage from "./pages/sendsPages/BoulderWomanPage";
+import BoulderManPage from "./pages/sendsPages/BoulderManPage";
 import { populateFAQdata } from "./FAQdata/populateFAQdata.js";
 
 // Declare the context at the top of the file

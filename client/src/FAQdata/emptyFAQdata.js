@@ -1,3 +1,13 @@
+/**
+ * emptyFAQdata.js
+ * 
+ * This file simply contains the questions of FAQdata in an object format. With empty answers.
+ * The FAQ data is used both to render FAQ section in the sendsPages and to add metadata to the <head> of such pages for SEO purposes (Google FAQ Shchema)
+ */
+
+
+
+
 export const emptyFAQdata = {
     americanGrades: {
         sportMan: [

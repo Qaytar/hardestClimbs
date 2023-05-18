@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import ChronologicalSends from '../components/ChronologicalSends';
-import RankedClimberSends from '../components/RankedClimberSends';
-import Toggle from '../components/ui/Toggle';
-import PopupInstructions from '../components/ui/PopupInstructions';
-import NavBar from '../components/layout/NavBar';
+import ChronologicalSends from '../../components/ChronologicalSends';
+import RankedClimberSends from '../../components/RankedClimberSends';
+import Toggle from '../../components/ui/Toggle';
+import PopupInstructions from '../../components/ui/PopupInstructions';
+import NavBar from '../../components/layout/NavBar';
 import styles from './bannerPage.module.css';
-import PagesSubtitles from '../components/PagesSubtitles';
-import FAQ from '../components/FAQ';
+import PagesSubtitles from '../../components/PagesSubtitles';
+import FAQ from '../../components/FAQ';
 
 function BoulderManPage(props) {
     //Scrolls to the top of the page when the component is mounted
@@ -59,7 +59,7 @@ function BoulderManPage(props) {
                 <RankedClimberSends filter={filter} data={props.data} isGradingSystem={isGradingSystem} />
             )}
             <div>
-                <FAQ filter={'boulderMan'} isGradingSystem={isGradingSystem} />
+                <FAQ filter={filter} isGradingSystem={isGradingSystem} />
             </div>
         </div>
     );
