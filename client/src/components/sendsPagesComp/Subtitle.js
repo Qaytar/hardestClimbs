@@ -1,4 +1,4 @@
-import styles from './ComponentStyles.module.css';
+import styles from './Subtitle.module.css'
 import { filterSends, countClimbers } from '../../utils/functionsHelpers';
 import { highestGrades, AmericanHighestGrades, cutOffGrades, AmericanCutOffGrades } from '../../utils/rankedGrades';
 

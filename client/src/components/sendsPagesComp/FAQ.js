@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Helmet } from 'react-helmet';
 import { FAQcontext } from '../../App.js';
-import styles from './ComponentStyles.module.css';
+import styles from './FAQ.module.css';
 
 function FAQ(props) {
     const faqData = useContext(FAQcontext);
@@ -45,9 +45,9 @@ function FAQ(props) {
                 </script>
             </Helmet>
             <h2>FAQ</h2>
-            <div className={styles.faqContainer}>
+            <div className={styles.FAQcontainer}>
                 {(props.isGradingSystem === 'american' ? faqData.americanGrades[filter] : faqData.europeanGrades[filter]).map((faq, index) => (
-                    <div className={styles.faq} key={index}>
+                    <div className={styles.FAQ} key={index}>
                         <h5>{faq.question}</h5>
                         <p>{faq.answer}</p>
                         <br />

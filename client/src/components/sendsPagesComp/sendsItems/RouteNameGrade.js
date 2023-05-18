@@ -1,26 +1,19 @@
-import styles from '../ComponentStyles.module.css';
-import { handleMouseEnter, handleMouseLeave, handleClick } from '../../../utils/functionsHelpers';
+import Popup from '../../ui/Popup';
 const { highestGrades } = require('../../../utils/rankedGrades');
 
-function RouteNameGrade(props) {
-    console.log(styles);
-    return (
-        <span
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-            onClick={handleClick}
-            className={`
-                ${styles.grade}     
-                ${(props.note) && styles.underlineForPopup}                             
-                ${(highestGrades[props.discipline][props.gender].includes(props.EUGrade)) && styles.highestGrade}
-            `}
-        >
-            {/* //Displays: route.name(route.grade) e.g. 'La Rambla(9a+)' or 'La Rambla(5.15a)' */}
-            {props.routeName} ({props.isGradingSystem === 'american' ? props.USGrade : props.EUGrade})
 
-            {/* //Displays a popup with the note if there is one */}
-            {props.note && (<span className={styles.popupNote}>{props.note}</span>)}
-        </span>
+function RouteNameGrade(props) {
+    const popupContent = props.note
+    const className = (highestGrades[props.discipline][props.gender].includes(props.EUGrade)) && 'highestGrade'
+
+    return (
+        <Popup
+            popupContent={popupContent}
+            styles={className}
+        >
+            {/* //Displays name and grade like: 'La Rambla(9a+)' or 'La Rambla(5.15a)' */}
+            {props.routeName} ({props.isGradingSystem === 'american' ? props.USGrade : props.EUGrade})
+        </Popup>
     )
 }
 

@@ -1,7 +1,7 @@
 .boulderBanner {
     width: 100vw;
     height: 40vh;
-    background: url('../../utils/imagesTest/Leonardo_Diffusion_close_up_10_meter_boulder_muted_chinese_ink_0.jpg');
+    background: url('../utils/imagesTest/Leonardo_Diffusion_close_up_10_meter_boulder_muted_chinese_ink_0.jpg');
     background-size: cover;
     background-position: left calc(100% + 150px);
     background-repeat: no-repeat;
@@ -16,7 +16,7 @@
 .sportBanner {
     width: 100vw;
     height: 40vh;
-    background: url('../../utils/imagesTest/Leonardo_Diffusion_close_up_large_rock_boulder_muted_chinese_i_0.jpg');
+    background: url('../utils/imagesTest/Leonardo_Diffusion_close_up_large_rock_boulder_muted_chinese_i_0.jpg');
     background-size: cover;
     background-position: left calc(100% + 450px);
     background-repeat: no-repeat;

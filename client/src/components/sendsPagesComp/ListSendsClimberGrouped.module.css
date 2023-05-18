@@ -1,0 +1,28 @@
+.send {
+    color: rgb(119, 119, 119);
+    font-weight: 300;
+}
+
+/* styles the name of the climber */
+.rankClimber {
+    margin-top: 25px;
+    margin-bottom: 5px;
+    color: #ff8e4d;
+    margin-left: 20%
+}
+
+/* styles the rest of the information of a given climber (the send information) */
+.rankSend {
+    margin-left: 25%;
+    margin-right: 5%;
+}
+
+@media screen and (min-width: 768px) {
+    .rankSend {
+        margin-left: 40%;
+    }
+
+    .rankClimber {
+        margin-left: 35%
+    }
+}

@@ -1,0 +1,16 @@
+/* conditionally styles the highest grade  */
+.highestGrade {
+    color: #fd5d00;
+    font-weight: bolder;
+}
+
+.subTitles {
+    color: black;
+    font-weight: 300;
+    text-align: center;
+    font-size: larger;
+    margin-bottom: 50px;
+    margin-top: 20px;
+    margin-left: 5%;
+    margin-right: 5%;
+}

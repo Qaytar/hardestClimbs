@@ -1,5 +1,5 @@
 import { filterSends, rankClimbers } from '../../utils/functionsHelpers';
-import styles from './ComponentStyles.module.css';
+import styles from './ListSendsClimberGrouped.module.css';
 import RouteNameGrade from './sendsItems/RouteNameGrade';
 
 

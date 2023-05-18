@@ -6,7 +6,7 @@ import Subtitle from './sendsPagesComp/Subtitle';
 import FAQ from './sendsPagesComp/FAQ';
 import Toggle from './ui/Toggle';
 import NavBar from './ui/NavBar';
-import styles from '../pages/sendsPages/bannerPage.module.css'
+import styles from './SendsPagesLayout.module.css'
 
 
 function SendsPagesLayout(props) {
@@ -26,13 +26,14 @@ function SendsPagesLayout(props) {
     };
 
     const title = `Hard ${props.filter.discipline} climbs (${props.filter.gender})`;
+    const banner = `${props.filter.discipline}Banner`
     return (
         <div>
-            <div className={styles.boulderBanner}>
+            <div className={styles[banner]}>
                 <NavBar />
             </div>
 
-            <div className="ui">
+            <div>
                 <Toggle
                     onClickFunction={toggleGradeDisplay}
                     isState={isGradingSystem}
@@ -48,7 +49,7 @@ function SendsPagesLayout(props) {
                 <PopupInstructions />
             </div>
 
-            <div className="content">
+            <div>
                 <h1>{title}</h1>
                 <Subtitle filter={props.filter} data={props.data} isGradingSystem={isGradingSystem} />
 

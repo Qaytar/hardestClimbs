@@ -1,0 +1,42 @@
+/*--- pop up styles --- */
+/* the popup itself */
+.popupNote {
+    position: absolute;
+    display: none;
+    background-Color: #ffb78d;
+    color: white;
+    padding: 20px;
+    border-Radius: 5px;
+    font-Size: 12px;
+    left: 0;
+    top: 100%;
+    margin-Top: 20px;
+    margin-Left: 5px;
+    white-Space: normal;
+    width: 200px;
+    text-align: left;
+    z-index: 1000;
+}
+
+/* the hoverable <span> element that shows the popup has to belong to this class */
+.hoverableSpan {
+    position: relative;
+}
+
+/* some style to indicate the user what's hoverable */
+.underlineForPopup {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    cursor: pointer;
+    text-decoration-color: #ff8e4d;
+}
+
+
+
+/*--- others (used by RouteNameGrade) --- */
+
+/* used to conditionally style the highest grade  */
+.highestGrade {
+    color: #fd5d00;
+    font-weight: bolder;
+}

@@ -1,0 +1,16 @@
+/* positions the instructions to the right of the screen, below the toggles */
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    align-items: center;
+    margin-top: 10px;
+    margin-right: 30px;
+}
+
+.noteInstructions {
+    display: flex;
+    color: rgb(119, 119, 119);
+    font-weight: 300;
+    font-size: smaller;
+}

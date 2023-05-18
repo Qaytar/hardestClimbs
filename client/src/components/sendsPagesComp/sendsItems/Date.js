@@ -1,4 +1,4 @@
-import styles from '../ComponentStyles.module.css';
+import styles from './Date.module.css';
 
 function Date(props) {
     return (

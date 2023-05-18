@@ -1,5 +1,5 @@
 import { filterSends } from '../../utils/functionsHelpers';
-import styles from './ComponentStyles.module.css';
+import styles from './ListSendsChronological.module.css';
 import RouteNameGrade from './sendsItems/RouteNameGrade';
 import Date from './sendsItems/Date';
 
@@ -23,7 +23,7 @@ function ListSendsChronological(props) {
                         />
                     </div>
                     <div className={`col-md-6 ${styles.chronoAuthorDate} ${styles.send}`}>
-                        by {send.climber.name} on <Date date={send.date} className={styles.chronoDate} />
+                        by {send.climber.name} on <Date date={send.date} />
                     </div>
                 </div>
             ))}

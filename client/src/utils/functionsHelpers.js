@@ -1,4 +1,4 @@
-import styles from '../components/sendsPagesComp/ComponentStyles.module.css';
+import styles from '../components/ui/Popup.module.css';
 
 /**filterSends
  * Filters and sorts sends based on discipline, gender, and an optional limit.

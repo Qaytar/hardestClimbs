@@ -1,0 +1,34 @@
+.send {
+    color: rgb(119, 119, 119);
+    font-weight: 300;
+}
+
+.chronoNameGrade {
+    text-align: right;
+    padding-right: 0px;
+}
+
+.chronoAuthorDate {
+    padding-left: 2px;
+    text-align: left;
+}
+
+.chronoRow {
+    margin-bottom: 20px;
+}
+
+/* Styles smaller screens for the choronoligical sends */
+@media screen and (max-width: 768px) {
+    .chronoNameGrade {
+        color: #ff8e4d;
+        text-align: center;
+    }
+
+    .chronoAuthorDate {
+        text-align: center;
+    }
+
+    .chronoDate {
+        color: rgb(119, 119, 119);
+    }
+}
