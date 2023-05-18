@@ -8,11 +8,11 @@ import BoulderManPage from "./pages/sendsPages/BoulderManPage";
 import { populateFAQdata } from "./FAQdata/populateFAQdata.js";
 
 // Declare the context at the top of the file
-export const FaqContext = createContext();
+export const FAQcontext = createContext();
 
 function App() {
   const [backendData, setBackendData] = useState([]);
-  const [faqData, setFaqData] = useState({}); // Initialize the faqData state with an empty object
+  const [FAQdata, setFAQdata] = useState({}); // Initialize the faqData state with an empty object
   const [loading, setLoading] = useState(true); // Add a loading state
 
   useEffect(() => {
@@ -20,7 +20,7 @@ function App() {
       .then(res => res.json())
       .then((data) => {
         setBackendData(data);
-        setFaqData(populateFAQdata(data));
+        setFAQdata(populateFAQdata(data));
         setLoading(false); // Set loading to false after the data is fetched
       });
   }, []);
@@ -31,7 +31,7 @@ function App() {
   }
 
   return (
-    <FaqContext.Provider value={faqData}>
+    <FAQcontext.Provider value={FAQdata}>
       <Routes>
         <Route path="/" element={<HomePage data={backendData} />} />
         <Route path="/SportWoman" element={<SportWomanPage data={backendData} />} />
@@ -39,7 +39,7 @@ function App() {
         <Route path="/BoulderWoman" element={<BoulderWomanPage data={backendData} />} />
         <Route path="/BoulderMan" element={<BoulderManPage data={backendData} />} />
       </Routes>
-    </FaqContext.Provider>
+    </FAQcontext.Provider>
   )
 }
 

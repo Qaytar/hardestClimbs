@@ -3,7 +3,7 @@ import styles from './HomePage.module.css';
 import ChronologicalSends from '../components/ChronologicalSends';
 import MainButton from '../components/ui/MainButton';
 import Toggle from '../components/ui/Toggle';
-import NavBar from '../components/layout/NavBar';
+import NavBar from '../components/ui/NavBar';
 
 
 function HomePage(props) {

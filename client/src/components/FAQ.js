@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
 import { Helmet } from 'react-helmet';
-import { FaqContext } from '../App.js';
+import { FAQcontext } from '../App.js';
 import styles from './ComponentStyles.module.css';
 
 function FAQ(props) {
-    const faqData = useContext(FaqContext);
+    const faqData = useContext(FAQcontext);
     const filter = props.filter.discipline + props.filter.gender.charAt(0).toUpperCase() + props.filter.gender.slice(1);
 
     const relevantFaqs = {
