@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Helmet } from 'react-helmet';
-import { FAQcontext } from '../App.js';
+import { FAQcontext } from '../../App.js';
 import styles from './ComponentStyles.module.css';
 
 function FAQ(props) {

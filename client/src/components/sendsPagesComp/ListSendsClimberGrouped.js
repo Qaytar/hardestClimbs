@@ -1,10 +1,10 @@
-import { filterSends, rankClimbers } from '../utils/functionsHelpers';
+import { filterSends, rankClimbers } from '../../utils/functionsHelpers';
 import styles from './ComponentStyles.module.css';
-import RouteNameGrade from './sends-elements/RouteNameGrade';
+import RouteNameGrade from './sendsItems/RouteNameGrade';
 
 
 
-function RankedClimberSends(props) {
+function ListSendsClimberGrouped(props) {
     //calls filteredSend to obtain the sub set off all the sends relevant to this page
     const filteredSends = filterSends(props.data, props.filter.discipline, props.filter.gender)
     //calls rankClimbers to obtain the ranking of the climbers included in the filteredSends
@@ -41,4 +41,4 @@ function RankedClimberSends(props) {
 
 }
 
-export default RankedClimberSends;
+export default ListSendsClimberGrouped;

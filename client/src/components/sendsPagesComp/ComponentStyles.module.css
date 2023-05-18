@@ -46,7 +46,7 @@
     font-weight: bolder;
 }
 
-/*--- used in the component RankedClimberSends --- */
+/*--- used in the component ListSendsClimberGrouped --- */
 /* styles the name of the climber */
 .rankClimber {
     margin-top: 25px;
@@ -55,7 +55,7 @@
     margin-left: 20%
 }
 
-/*--- used in the component RankedClimberSends --- */
+/*--- used in the component ListSendsClimberGrouped --- */
 /* styles the rest of the information of a given climber (the send information) */
 .rankSend {
     margin-left: 25%;
@@ -72,7 +72,7 @@
     }
 }
 
-/*--- used in the component ChronologicalSends --- */
+/*--- used in the component ListSendsChronological --- */
 /* styles the date of the send */
 
 .chronoNameGrade {
@@ -127,7 +127,7 @@
     font-size: smaller;
 }
 
-/*--- used in component PagesSubtitles --- */
+/*--- used in component Subtitle --- */
 .subTitles {
     color: black;
     font-weight: 300;

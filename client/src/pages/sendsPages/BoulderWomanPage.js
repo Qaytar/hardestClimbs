@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import ChronologicalSends from '../../components/ChronologicalSends';
-import RankedClimberSends from '../../components/RankedClimberSends';
+import ListSendsChronological from '../../components/sendsPagesComp/ListSendsChronological';
+import ListSendsClimberGrouped from '../../components/sendsPagesComp/ListSendsClimberGrouped';
 import Toggle from '../../components/ui/Toggle';
-import PopupInstructions from '../../components/PopupInstructions';
+import PopupInstructions from '../../components/sendsPagesComp/PopupInstructions';
 import NavBar from '../../components/ui/NavBar';
 import styles from './bannerPage.module.css';
-import PagesSubtitles from '../../components/PagesSubtitles';
-import FAQ from '../../components/FAQ';
+import Subtitle from '../../components/sendsPagesComp/Subtitle';
+import FAQ from '../../components/sendsPagesComp/FAQ';
 
 function BoulderWomanPage(props) {
     //Scrolls to the top of the page when the component is mounted
@@ -51,11 +51,11 @@ function BoulderWomanPage(props) {
                 <PopupInstructions />
             </div>
             <h1>Hard Boulder Climbs (Woman)</h1>
-            <PagesSubtitles filter={filter} data={props.data} isGradingSystem={isGradingSystem} />
+            <Subtitle filter={filter} data={props.data} isGradingSystem={isGradingSystem} />
             {isDisplayData === 'chronological' ? (
-                <ChronologicalSends filter={filter} data={props.data} isGradingSystem={isGradingSystem} />
+                <ListSendsChronological filter={filter} data={props.data} isGradingSystem={isGradingSystem} />
             ) : (
-                <RankedClimberSends filter={filter} data={props.data} isGradingSystem={isGradingSystem} />
+                <ListSendsClimberGrouped filter={filter} data={props.data} isGradingSystem={isGradingSystem} />
             )}
             <div>
                 <FAQ filter={filter} isGradingSystem={isGradingSystem} />

@@ -1,6 +1,6 @@
 import styles from '../ComponentStyles.module.css';
-import { handleMouseEnter, handleMouseLeave, handleClick } from '../../utils/functionsHelpers';
-const { highestGrades } = require('../../utils/rankedGrades');
+import { handleMouseEnter, handleMouseLeave, handleClick } from '../../../utils/functionsHelpers';
+const { highestGrades } = require('../../../utils/rankedGrades');
 
 function RouteNameGrade(props) {
     return (

@@ -1,9 +1,9 @@
 import styles from './ComponentStyles.module.css';
-import { filterSends, countClimbers } from '../utils/functionsHelpers';
-import { highestGrades, AmericanHighestGrades, cutOffGrades, AmericanCutOffGrades } from '../utils/rankedGrades';
+import { filterSends, countClimbers } from '../../utils/functionsHelpers';
+import { highestGrades, AmericanHighestGrades, cutOffGrades, AmericanCutOffGrades } from '../../utils/rankedGrades';
 
 
-function PagesSubtitles(props) {
+function Subtitle(props) {
 
     const filteredSends = filterSends(props.data, props.filter.discipline, props.filter.gender);
     const climbersCount = countClimbers(filteredSends);
@@ -26,4 +26,4 @@ function PagesSubtitles(props) {
     );
 }
 
-export default PagesSubtitles;
+export default Subtitle;

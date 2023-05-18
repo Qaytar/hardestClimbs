@@ -1,9 +1,9 @@
-import { filterSends } from '../utils/functionsHelpers';
+import { filterSends } from '../../utils/functionsHelpers';
 import styles from './ComponentStyles.module.css';
-import RouteNameGrade from './sends-elements/RouteNameGrade';
-import Date from './sends-elements/Date';
+import RouteNameGrade from './sendsItems/RouteNameGrade';
+import Date from './sendsItems/Date';
 
-function ChronologicalSends(props) {
+function ListSendsChronological(props) {
     //calls filteredSend to obtain the sub set off all the sends relevant to this page
     const filteredSends = filterSends(props.data, props.filter.discipline, props.filter.gender, props.filter.limit);
 
@@ -32,4 +32,4 @@ function ChronologicalSends(props) {
 
 }
 
-export default ChronologicalSends;
+export default ListSendsChronological;

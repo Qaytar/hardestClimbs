@@ -1,4 +1,4 @@
-import { handleMouseEnter, handleMouseLeave, handleClick } from '../utils/functionsHelpers';
+import { handleMouseEnter, handleMouseLeave, handleClick } from '../../utils/functionsHelpers';
 import styles from './ComponentStyles.module.css';
 
 function PopupInstructions() {

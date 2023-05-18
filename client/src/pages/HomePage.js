@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import styles from './HomePage.module.css';
-import ChronologicalSends from '../components/ChronologicalSends';
+import ListSendsChronological from '../components/sendsPagesComp/ListSendsChronological';
 import MainButton from '../components/ui/MainButton';
 import Toggle from '../components/ui/Toggle';
 import NavBar from '../components/ui/NavBar';
@@ -54,14 +54,14 @@ function HomePage(props) {
                         <div className="col-md">
                             <div className={styles.summaryTable}>
                                 <h5>Woman</h5>
-                                <ChronologicalSends filter={SportWomanFilter} data={props.data} isGradingSystem={isGradingSystem} />
+                                <ListSendsChronological filter={SportWomanFilter} data={props.data} isGradingSystem={isGradingSystem} />
                             </div>
                             <MainButton to={'/SportWoman'}>view more</MainButton>
                         </div>
                         <div className={`col-md ${styles.secondTable}`}>
                             <div className={styles.summaryTable}>
                                 <h5>Man</h5>
-                                <ChronologicalSends filter={SportManFilter} data={props.data} isGradingSystem={isGradingSystem} />
+                                <ListSendsChronological filter={SportManFilter} data={props.data} isGradingSystem={isGradingSystem} />
                             </div>
                             <MainButton to={'/SportMan'}>view more</MainButton>
                         </div>
@@ -72,14 +72,14 @@ function HomePage(props) {
                         <div className="col-md">
                             <div className={styles.summaryTable}>
                                 <h5>Man</h5>
-                                <ChronologicalSends filter={BouldertManFilter} data={props.data} isGradingSystem={isGradingSystem} />
+                                <ListSendsChronological filter={BouldertManFilter} data={props.data} isGradingSystem={isGradingSystem} />
                             </div>
                             <MainButton to={'/BoulderMan'}>view more</MainButton>
                         </div>
                         <div className={`col-md ${styles.secondTable}`}>
                             <div className={styles.summaryTable}>
                                 <h5>Woman</h5>
-                                <ChronologicalSends filter={BouldertWomanFilter} data={props.data} isGradingSystem={isGradingSystem} />
+                                <ListSendsChronological filter={BouldertWomanFilter} data={props.data} isGradingSystem={isGradingSystem} />
                             </div>
                             <MainButton to={'/BoulderWoman'}>view more</MainButton>
                         </div>
