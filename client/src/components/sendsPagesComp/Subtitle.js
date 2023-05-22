@@ -5,6 +5,7 @@ import { highestGrades, AmericanHighestGrades, cutOffGrades, AmericanCutOffGrade
 
 function Subtitle(props) {
 
+    // fetches the relevant data based on the filter, to be used in the dynamic subtitle
     const filteredSends = filterSends(props.data, props.filter.discipline, props.filter.gender);
     const climbersCount = countClimbers(filteredSends);
     const topClimbersCount = countClimbers(filteredSends, highestGrades[props.filter.discipline][props.filter.gender]);
@@ -13,6 +14,7 @@ function Subtitle(props) {
     const HighestGrade = props.isGradingSystem === 'american' ? AmericanHighestGrades[props.filter.discipline][props.filter.gender][0] : highestGrades[props.filter.discipline][props.filter.gender][0];
     const CutOffGrade = props.isGradingSystem === 'american' ? AmericanCutOffGrades[props.filter.discipline][props.filter.gender][0] : cutOffGrades[props.filter.discipline][props.filter.gender][0];
 
+    // returns JSX to render subtitle with dynamic content
     return (
         <div className={styles.subTitles}>
             <p>

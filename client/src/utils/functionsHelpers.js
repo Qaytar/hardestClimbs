@@ -1,3 +1,9 @@
+/**
+ * functionsHelpers.js
+ * 
+ * This file contains some functions used througout the app.
+ */
+
 import styles from '../components/ui/Popup.module.css';
 
 /**filterSends

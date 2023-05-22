@@ -1,3 +1,10 @@
+/**
+ * rankedGrades.js
+ * 
+ * This file simply contains some useful constants.
+ * They need to be maintained by the admin with climbing criteria as things change. * 
+ */
+
 export const rankedEuropeanGrades = {
     sport: ['9c', '9b+', '9b+ or 9b/+', '9b or 9b/+', '9b', '9b or 9a+', '9a+'],
     boulder: ['9A', '9A or 8C+', '8C+', '8C', '8C+ or 8C', '8B+']

@@ -5,18 +5,22 @@ import styles from './FAQ.module.css';
 
 function FAQ(props) {
     const faqData = useContext(FAQcontext);
+    // Construct the filter for the specific discipline and gender in format 'sportMan' or 'boulderWoman'
     const filter = props.filter.discipline + props.filter.gender.charAt(0).toUpperCase() + props.filter.gender.slice(1);
 
+    // Gather the relevant FAQs for the current page context based on filter
     const relevantFaqs = {
         europeanGrades: faqData.europeanGrades[filter],
         americanGrades: faqData.americanGrades[filter],
     }
 
-    // Convert FAQs to schema format
+    // Convert FAQs to schema format for SEO purposes
+    // This JSON-LD (JavaScript Object Notation for Linked Data) format helps search engines understand content and structure of data
     const faqSchema = {
         "@context": "https://schema.org",
         "@type": "FAQPage",
         "mainEntity": [
+            // Mapping European and American grades FAQ to the schema
             ...relevantFaqs.europeanGrades.map(faq => ({
                 "@type": "Question",
                 "name": faq.question,
@@ -36,7 +40,8 @@ function FAQ(props) {
         ]
     };
 
-
+    // Use Helmet to inject the metadata into the head of the document
+    // Renders questions and answers using the same data
     return (
         <>
             <Helmet>

@@ -4,6 +4,7 @@ import Popup from '../ui/Popup';
 function PopupInstructions() {
 
     const popupContent = 'Yup, just like that :).';
+
     return (
         <div className={styles.wrapper}>
             <i className={styles.noteInstructions}>

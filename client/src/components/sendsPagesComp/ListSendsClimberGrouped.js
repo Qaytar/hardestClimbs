@@ -5,11 +5,12 @@ import RouteNameGrade from './sendsItems/RouteNameGrade';
 
 
 function ListSendsClimberGrouped(props) {
-    //calls filteredSend to obtain the sub set off all the sends relevant to this page
+    // calls filteredSend to obtain the sub set off all the sends relevant to the page
     const filteredSends = filterSends(props.data, props.filter.discipline, props.filter.gender)
-    //calls rankClimbers to obtain the ranking of the climbers included in the filteredSends
+    // calls rankClimbers to obtain an array climbers ranked by their climbs
     const rankedClimbers = rankClimbers(filteredSends);
 
+    //returns JSX rendering a list of climbers (and their sends) ranked by climber achievements
     return (
         <div className={`container ${styles.send}`}>
             {rankedClimbers.map((rankedClimber, index) => (

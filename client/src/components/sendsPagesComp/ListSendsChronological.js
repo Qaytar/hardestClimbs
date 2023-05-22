@@ -4,9 +4,10 @@ import RouteNameGrade from './sendsItems/RouteNameGrade';
 import Date from './sendsItems/Date';
 
 function ListSendsChronological(props) {
-    //calls filteredSend to obtain the sub set off all the sends relevant to this page
+    // calls filteredSend to obtain the sub set off all the sends relevant to this page
     const filteredSends = filterSends(props.data, props.filter.discipline, props.filter.gender, props.filter.limit);
 
+    //returns JSX rendering a list of sends (and some details) in chronological order
     return (
         <div className="container">
             {filteredSends.map((send, index) => (

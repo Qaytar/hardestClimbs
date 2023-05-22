@@ -5,28 +5,31 @@ import MainButton from '../components/ui/MainButton';
 import Toggle from '../components/ui/Toggle';
 import NavBar from '../components/ui/NavBar';
 
-
 function HomePage(props) {
-    //Creates a state variable to track whether the grading system is European or American
+    // Tracks the grading system (European or American)
     const [isGradingSystem, setIsGradingSystem] = useState('european');
-    //Creates a function to toggle the grading system, it's called when the button is clicked
+
+    // Toggles the grading system when clicked
     const toggleGradeDisplay = () => {
         setIsGradingSystem(isGradingSystem === 'european' ? 'american' : 'european');
     };
 
-    // Create a ref for the Toggle component
+    // Ref for the Toggle component to scroll to when button is clicked
     const imageRef = useRef(null);
-    // Function to scroll to the Toggle component
+
+    // Scrolls to the Toggle component when button is clicked
     const executeScroll = () => {
         const y = imageRef.current.getBoundingClientRect().bottom;
         window.scrollTo({ top: y, behavior: 'smooth' });
     }
 
-
+    // Filter objects to pass as props to the ListSendsChronological component
     const SportWomanFilter = { discipline: 'sport', gender: 'woman', limit: 3 }
     const SportManFilter = { discipline: 'sport', gender: 'man', limit: 3 }
     const BouldertManFilter = { discipline: 'boulder', gender: 'man', limit: 3 }
     const BouldertWomanFilter = { discipline: 'boulder', gender: 'woman', limit: 3 }
+
+    // Returns JSX elements to be rendered on the HomePage
 
     return (
         <div>

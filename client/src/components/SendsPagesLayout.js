@@ -11,22 +11,29 @@ import styles from './SendsPagesLayout.module.css'
 
 function SendsPagesLayout(props) {
 
-    //Create a state variavle to display sends chronologicaly or grouped be ranked climbers
+    // State variable to control the display of the data, either grouped by climber or in chronological order.
     const [isDisplayData, setIsDisplayData] = useState('byClimber');
-    //Creates a function to toggle the display of the data, it's called when the button is clicked
+
+    // Function to toggle the display of the data when the related button is clicked
     const toggleDisplayData = () => {
         setIsDisplayData(isDisplayData === 'chronological' ? 'byClimber' : 'chronological');
     };
 
-    //Creates a state variable to track whether the grading system is European or American
+    // State variable to keep track of the grading system being used, either European or American.
     const [isGradingSystem, setIsGradingSystem] = useState('european');
-    //Creates a function to toggle the grading system, it's called when the button is clicked
+
+    // Function to toggle the grading system when the related button is clicked
     const toggleGradeDisplay = () => {
         setIsGradingSystem(isGradingSystem === 'european' ? 'american' : 'european');
     };
 
+    // Generate the title of the page based on the filter props
     const title = `Hard ${props.filter.discipline} climbs (${props.filter.gender})`;
-    const banner = `${props.filter.discipline}Banner`
+
+    // Variable for styling the banner based on the discipline
+    const banner = `${props.filter.discipline}Banner`;
+
+    // Returns in JSX the layout for the sends pages
     return (
         <div>
             <div className={styles[banner]}>

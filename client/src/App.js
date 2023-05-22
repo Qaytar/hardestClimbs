@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import React, { useEffect, useState, createContext } from 'react'
+import React, { useEffect, useState, createContext } from 'react';
 import HomePage from "./pages/HomePage";
 import SportWomanPage from "./pages/sendsPages/SportWomanPage";
 import SportManPage from "./pages/sendsPages/SportManPage";
@@ -7,29 +7,37 @@ import BoulderWomanPage from "./pages/sendsPages/BoulderWomanPage";
 import BoulderManPage from "./pages/sendsPages/BoulderManPage";
 import { populateFAQdata } from "./FAQdata/populateFAQdata.js";
 
-// Declare the context at the top of the file
+// Create context for FAQ data
 export const FAQcontext = createContext();
 
 function App() {
+  // Initial state setup for backend data, FAQ data and loading state
   const [backendData, setBackendData] = useState([]);
-  const [FAQdata, setFAQdata] = useState({}); // Initialize the faqData state with an empty object
-  const [loading, setLoading] = useState(true); // Add a loading state
+  const [FAQdata, setFAQdata] = useState({});
+  const [loading, setLoading] = useState(true);
 
+  // Fetch backend data when component mounts
   useEffect(() => {
     fetch('/api')
       .then(res => res.json())
       .then((data) => {
+        // Set backend data and FAQ data after it's fetched
+        // 'data' is all the data used in the app. It's a populated array of the object Sends (mongoose). Model can be found in the folder 'models' in the server side code
         setBackendData(data);
+
+        // FAQ data is contained in the backend data, it requires some basic fetching and calculations done in the folder 'FAQdata'
         setFAQdata(populateFAQdata(data));
-        setLoading(false); // Set loading to false after the data is fetched
+        // Set loading to false after the data is fetched
+        setLoading(false);
       });
   }, []);
 
-  // Don't render the Routes until the data is fetched
+  // Return empty div when data is being fetched
   if (loading) {
     return <div></div>;
   }
 
+  // Return Routes wrapped in FAQcontext provider when data is fetched
   return (
     <FAQcontext.Provider value={FAQdata}>
       <Routes>
@@ -43,5 +51,6 @@ function App() {
   )
 }
 
-
+// Export App component
 export default App;
+
