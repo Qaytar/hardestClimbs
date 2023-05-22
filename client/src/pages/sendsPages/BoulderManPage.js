@@ -13,7 +13,6 @@ function BoulderManPage(props) {
 
     return (
         <div>
-            // SendsPagesLayout component handles the display of the sends data
             <SendsPagesLayout data={props.data} filter={filter} />
         </div>
     );
