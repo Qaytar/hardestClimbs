@@ -4,6 +4,8 @@ const path = require('path');
 const Climber = require('../models/climber');
 const Route = require('../models/route');
 const Send = require('../models/send');
+require('dotenv').config({ path: path.resolve(__dirname, '../.env') })
+
 
 const climbersCsvPath = path.join(__dirname, 'climbers.csv');
 const routesCsvPath = path.join(__dirname, 'routes.csv');
@@ -62,7 +64,10 @@ const importSends = async (sendsMapping) => {
     }
 };
 //Connects to mongoDb
-const dbUrl = 'mongodb://127.0.0.1:27017/hardestClimbsLocal';
+//const dbUrl = 'mongodb://127.0.0.1:27017/hardestClimbsLocal';
+const dbUrl = process.env.MONGODB_URL;
+console.log('process.env:', process.env);
+
 mongoose.connect(dbUrl)
     .then(() => {
         console.log('mongo connection open')
