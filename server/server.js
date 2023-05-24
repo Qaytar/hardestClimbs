@@ -8,6 +8,7 @@ require('dotenv').config();
 
 app.get('/api', async (req, res) => {
     try {
+        // fetches all Sends from database and populates climber and route, which means the outcome is the entirity of the data.
         const serverData = await Send.find()
             .populate('climber')
             .populate('route')
@@ -23,17 +24,29 @@ app.get('/api', async (req, res) => {
 
 
 
-//Connects to mongoDb
-const dbUrl = 'mongodb://127.0.0.1:27017/hardestClimbsLocal';
-//const dbUrl = process.env.MONGODB_URL;
+// Connects to mongoDb. use either of the following two lines depending on if you are working localy or not.
+
+/*local*/
+// const dbUrl = 'mongodb://127.0.0.1:27017/hardestClimbsLocal';
+
+/*remote (vercel)*/
+const dbUrl = process.env.MONGODB_URL;
+
 mongoose.connect(dbUrl)
     .then(() => {
-        console.log('mongo connection open')
+        console.error('mongo connection open')
     })
     .catch((err) => {
-        console.log('mongo connection error')
-        console.log(err)
+        console.error('mongo connection error')
+        console.info(err)
     })
 
-app.listen(5000, () => console.log('Server started on port 5000'));
+// uncomment when woking localy, but since deployment is on vercel which is serverless I need to export the app instead
+//use either of the following two lines depending on if you are working localy or not.
+
+/*local*/
+//app.listen(5000, () => console.log('Server started on port 5000'));
+
+/*remote (vercel)*/
+module.exports = app;
 
