@@ -4,7 +4,7 @@ const Send = require('./models/send');
 const Climber = require('./models/climber');
 const Route = require('./models/route');
 const app = express();
-//{ "serverData": ["Adam Ondra", "Stefano"] }
+require('dotenv').config();
 
 app.get('/api', async (req, res) => {
     try {
@@ -24,7 +24,8 @@ app.get('/api', async (req, res) => {
 
 
 //Connects to mongoDb
-const dbUrl = 'mongodb://127.0.0.1:27017/hardestClimbsLocal';
+//const dbUrl = 'mongodb://127.0.0.1:27017/hardestClimbsLocal';
+const dbUrl = process.env.MONGODB_URL;
 mongoose.connect(dbUrl)
     .then(() => {
         console.log('mongo connection open')
