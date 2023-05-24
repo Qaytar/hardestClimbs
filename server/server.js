@@ -27,10 +27,10 @@ app.get('/api', async (req, res) => {
 // Connects to mongoDb. use either of the following two lines depending on if you are working localy or not.
 
 /*local*/
-// const dbUrl = 'mongodb://127.0.0.1:27017/hardestClimbsLocal';
+const dbUrl = 'mongodb://127.0.0.1:27017/hardestClimbsLocal';
 
 /*remote (vercel)*/
-const dbUrl = process.env.MONGODB_URL;
+//const dbUrl = process.env.MONGODB_URL;
 
 mongoose.connect(dbUrl)
     .then(() => {
