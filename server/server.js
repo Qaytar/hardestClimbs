@@ -3,8 +3,12 @@ const mongoose = require('mongoose');
 const Send = require('./models/send');
 const Climber = require('./models/climber');
 const Route = require('./models/route');
+const cors = require('cors');
 const app = express();
 require('dotenv').config();
+
+app.use(cors());
+
 
 app.get('/api', async (req, res) => {
     try {
