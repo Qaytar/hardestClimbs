@@ -1,4 +1,4 @@
-const express = require('express');
+// const express = require('express');
 const mongoose = require('mongoose');
 const Send = require('./models/send');
 const Climber = require('./models/climber');
@@ -46,7 +46,7 @@ mongoose.connect(dbUrl)
 
 /*local*/
 //app.listen(5000, () => console.log('Server started on port 5000'));
-
+kjhgfd
 /*remote (vercel)*/
-module.exports = app;
+//module.exports = app;
 
