@@ -36,7 +36,10 @@ function App() {
 
   // Return empty div when data is being fetched
   if (loading) {
-    return <div></div>;
+    return <div className={'loading'}>
+      <p>Using a free server..</p>
+      <p>..takes a moment to Load :)</p>
+    </div>;
   }
 
   // Return Routes wrapped in FAQcontext provider when data is fetched

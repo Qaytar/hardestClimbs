@@ -17,11 +17,21 @@ function HomePage(props) {
     // Ref for the Toggle component to scroll to when button is clicked
     const imageRef = useRef(null);
 
-    // Scrolls to the Toggle component when button is clicked
+    // Scrolls down untill the main image is out of view
     const executeScroll = () => {
-        const y = imageRef.current.getBoundingClientRect().bottom;
+        // window.pageYOffset returns the number of pixels that the document has already been scrolled vertically from the top. 
+        const currentScrollPosition = window.pageYOffset;
+
+        // getBoundingClientRect().bottom provides the distance from the top of the viewport to the bottom of the element.
+        const imageRefBottomPosition = imageRef.current.getBoundingClientRect().bottom;
+
+        // adding the current scroll position and the position of the imageRef's
+        const y = currentScrollPosition + imageRefBottomPosition;
+
         window.scrollTo({ top: y, behavior: 'smooth' });
     }
+
+
 
     // Filter objects to pass as props to the ListSendsChronological component
     const SportWomanFilter = { discipline: 'sport', gender: 'woman', limit: 3 }
@@ -47,7 +57,7 @@ function HomePage(props) {
                     options={['european grades', 'american grades']}
                 />
             </div>
-            <div>
+            <div className={styles.centerH1}>
                 <h1>Up to date registry of the world's hardest climbs</h1>
             </div>
             <section className={styles.contentWrapper}>

@@ -28,7 +28,7 @@ function SendsPagesLayout(props) {
     };
 
     // Generate the title of the page based on the filter props
-    const title = `Hard ${props.filter.discipline} climbs (${props.filter.gender})`;
+    const title = `Hardest ${props.filter.discipline} climbs (${props.filter.gender})`;
 
     // Variable for styling the banner based on the discipline
     const banner = `${props.filter.discipline}Banner`;

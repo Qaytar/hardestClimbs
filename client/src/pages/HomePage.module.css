@@ -40,10 +40,11 @@
 
 /* Styles for different elements, mostly spacing */
 h1 {
-    margin-bottom: 20px;
-    margin-top: 80px;
     width: 95%;
+    margin: 80px auto 20px;
 }
+
+
 
 h4,
 h5 {
