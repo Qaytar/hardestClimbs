@@ -2,11 +2,18 @@ import { handleMouseEnter, handleMouseLeave, handleClick } from '../../utils/fun
 import styles from './Popup.module.css';
 
 function Popup(props) {
+    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints;
+
+    const eventHandlers = isTouchDevice ? {
+        onClick: handleClick,
+    } : {
+        onMouseEnter: handleMouseEnter,
+        onMouseLeave: handleMouseLeave,
+    };
+
     return (
         <span
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-            onClick={handleClick}
+            {...eventHandlers}
             className={`
                 ${styles.hoverableSpan}     
                 ${(props.popupContent) && styles.underlineForPopup}
@@ -20,5 +27,6 @@ function Popup(props) {
         </span>
     )
 }
+
 
 export default Popup;

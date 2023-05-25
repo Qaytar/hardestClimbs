@@ -18,7 +18,8 @@ function App() {
 
   // Fetch backend data when component mounts
   useEffect(() => {
-    fetch('https://hardestclimbs-server.vercel.app/api')
+    //fetch('https://hardestclimbs-server.vercel.app/api')
+    fetch('/api')
       .then(res => res.json())
       .then((data) => {
         // Set backend data and FAQ data after it's fetched

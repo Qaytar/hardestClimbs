@@ -30,7 +30,7 @@ function ListSendsClimberGrouped(props) {
                                     note={route.note}
                                     routeName={route.name}
                                 />
-                                {index !== rankedClimber.sends[props.filter.discipline].length - 1 ? ', ' : ''}&nbsp;&nbsp;
+                                {index !== rankedClimber.sends[props.filter.discipline].length - 1 ? ', ' : ''}
                             </div>
                         ))}
                     </div>

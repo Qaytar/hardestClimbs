@@ -48,7 +48,7 @@ function HomePage(props) {
                 />
             </div>
             <div>
-                <h1>Up to date information on the world's hardest climbs</h1>
+                <h1>Up to date registry of the world's hardest climbs</h1>
             </div>
             <section className={styles.contentWrapper}>
                 <div className="container text-center">

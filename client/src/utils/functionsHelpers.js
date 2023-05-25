@@ -137,28 +137,37 @@ export const countClimbers = (sendsArray, targetGrades) => {
 
 
 /**hadleMouseEnter, handleMouseLeave and handleClick
- * Two functions to handle the hover effect over the grade to display the note
+ * Three functions to handle the hover effect over the grade to display the note
  * @param {event} event - The event that triggers the function
  *  
  */
 
 export const handleMouseEnter = (event) => {
+    console.log('Mouse Enter');
     const popup = event.target.querySelector(`.${styles.popupNote}`);
     if (popup) {
+        console.log('Popup Found on Mouse Enter');
         popup.style.display = 'block';
+        console.log(`Popup Display after Mouse Enter: ${popup.style.display}`);
     }
 };
 export const handleMouseLeave = (event) => {
+    console.log('Mouse Leave');
     const popup = event.target.querySelector(`.${styles.popupNote}`);
     if (popup) {
+        console.log('Popup Found on Mouse Leave');
         popup.style.display = 'none';
+        console.log(`Popup Display after Mouse Leave: ${popup.style.display}`);
     }
 };
 
 export const handleClick = (event) => {
+    console.log('Click');
     const popup = event.target.querySelector(`.${styles.popupNote}`);
+    console.log('Popup Found on Click');
     if (popup) {
         popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
+        console.log(`Popup Display after Click: ${popup.style.display}`);
     }
 };
 
