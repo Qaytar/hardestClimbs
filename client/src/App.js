@@ -17,9 +17,10 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   // Fetch backend data when component mounts
+  /*use the right fetch depending on local or remote server*/
   useEffect(() => {
-    //fetch('https://hardestclimbs-server.vercel.app/api')
-    fetch('/api')
+    fetch('https://hardestclimbs-server.vercel.app/api')
+      //fetch('/api')
       .then(res => res.json())
       .then((data) => {
         // Set backend data and FAQ data after it's fetched
