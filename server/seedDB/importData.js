@@ -11,15 +11,52 @@ const climbersCsvPath = path.join(__dirname, 'climbers.csv');
 const routesCsvPath = path.join(__dirname, 'routes.csv');
 const sendsMappingCsvPath = path.join(__dirname, 'sends_mapping.csv');
 
-// Add parseDate function here
+
+// const parseDate = (dateStr) => {
+//     const parts = dateStr.split('-');
+//     if (parts.length === 3) {
+//         console.log('input:', dateStr)
+//         // This will map 'Jan' to 0, 'Feb' to 1, etc.
+//         const monthIndex = new Date(Date.parse(parts[0] + " 1, 2012")).getMonth();
+//         // Assumption: the year is in the 2000s.
+//         const year = 2000 + parseInt(parts[1], 10);
+//         console.log('output:', new Date(year, monthIndex))
+//         return new Date(year, monthIndex);
+//     } else if (parts.length === 1) {
+//         console.log('input:', dateStr)
+//         // Only the year provided
+//         const year = parseInt(parts[0], 10);
+//         console.log('output:', new Date(year, 0))
+//         return new Date(year, 0); // January 1 of the given year
+//     } else {
+//         // Invalid date format
+//         throw new Error('Invalid date format: ' + dateStr);
+//     }
+// };
+
 const parseDate = (dateStr) => {
+    console.log('input:', dateStr)
     const parts = dateStr.split('-');
-    // This will map 'Jan' to 0, 'Feb' to 1, etc.
-    const monthIndex = new Date(Date.parse(parts[0] + " 1, 2012")).getMonth();
-    // Assumption: the year is in the 2000s.
-    const year = 2000 + parseInt(parts[1], 10);
-    return new Date(year, monthIndex);
+
+    if (parts.length === 2) {
+        // This will map 'Jan' to 0, 'Feb' to 1, etc.
+        const monthIndex = new Date(Date.parse(parts[0] + " 1, 2012")).getMonth();
+        // Assumption: the year is in the 2000s.
+        const year = 2000 + parseInt(parts[1], 10);
+        console.log('output:', new Date(year, monthIndex))
+        return new Date(year, monthIndex);
+    } else if (parts.length === 1) {
+        console.log('input:', dateStr)
+        // Only the year provided
+        const year = parseInt(parts[0], 10);
+        console.log('output:', new Date(year, 0))
+        return new Date(year, 0); // January 1 of the given year
+    } else {
+        // Invalid date format
+        throw new Error('Invalid date format: ' + dateStr);
+    }
 };
+
 
 const readCSV = async (csvPath) => {
     try {
@@ -66,7 +103,7 @@ const importSends = async (sendsMapping) => {
 //Connects to mongoDb
 //const dbUrl = 'mongodb://127.0.0.1:27017/hardestClimbsLocal';
 const dbUrl = process.env.MONGODB_URL;
-console.log('process.env:', process.env);
+
 
 mongoose.connect(dbUrl)
     .then(() => {

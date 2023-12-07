@@ -81,8 +81,8 @@ export function populateFAQdata(data) {
     FAQdata.americanGrades.boulderMan[2].answer = `There are ${answerV16Count.length} V16 boulders`;
 
     const answerV17Count = countRoutes(data, '9A');
-    FAQdata.europeanGrades.boulderMan[3].answer = `There are ${answerV17Count.length} 9A boulders, ${formatList(answerV17Count)}. Though there is no consensus on Soudain Seul: Simon Lorenzi (2021) and Camile Coudert (2022) suggested 9A but Nico Pelorson (2021) opted for 8C+)`;
-    FAQdata.americanGrades.boulderMan[3].answer = `There are ${answerV17Count.length} V17 boulders, ${formatList(answerV17Count)}. Though there is no consensus on Soudain Seul: Simon Lorenzi (2021) and Camile Coudert (2022) suggested V17 but Nico Pelorson (2021) opted for V16)`;
+    FAQdata.europeanGrades.boulderMan[3].answer = `There are ${answerV17Count.length} 9A boulders, ${formatList(answerV17Count)}. Though not all of them have grade consensus and/or repetitions`;
+    FAQdata.americanGrades.boulderMan[3].answer = `There are ${answerV17Count.length} V17 boulders, ${formatList(answerV17Count)}. Though not all of them have grade consensus and/or repetitions`;
 
     /*SECTION 3*/
     //Who is the strongest climber?
@@ -180,9 +180,9 @@ export function populateFAQdata(data) {
     FAQdata.americanGrades.sportWoman[7].answer = `The most recent 5.15b climb was on ${answerRecent9b.date}, by ${formatList(answerRecent9b.names)} (${answerRecent9b.routeName})`;
 
     //boulderMan
-    const answerRecent8CPlus = climbersByDate(boulderData, '8C+', 'recent');
-    FAQdata.europeanGrades.boulderMan[7].answer = `The most recent 8C+ climb was on ${answerRecent8CPlus.date}, by ${formatList(answerRecent8CPlus.names)} (${answerRecent8CPlus.routeName})`;
-    FAQdata.americanGrades.boulderMan[7].answer = `The most recent V16 climb was on ${answerRecent8CPlus.date}, by ${formatList(answerRecent8CPlus.names)} (${answerRecent8CPlus.routeName})`;
+    // const answerRecent8CPlus = climbersByDate(boulderData, '8C+', 'recent');
+    // FAQdata.europeanGrades.boulderMan[7].answer = `The most recent 8C+ climb was on ${answerRecent8CPlus.date}, by ${formatList(answerRecent8CPlus.names)} (${answerRecent8CPlus.routeName})`;
+    // FAQdata.americanGrades.boulderMan[7].answer = `The most recent V16 climb was on ${answerRecent8CPlus.date}, by ${formatList(answerRecent8CPlus.names)} (${answerRecent8CPlus.routeName})`;
 
     const answerRecent9A = climbersByDate(boulderData, '9A', 'recent');
     FAQdata.europeanGrades.boulderMan[8].answer = `The most recent 9A climb was on ${answerRecent9A.date}, by ${formatList(answerRecent9A.names)} (${answerRecent9A.routeName})`;
