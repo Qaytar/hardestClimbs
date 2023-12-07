@@ -69,7 +69,7 @@ function SendsPagesLayout(props) {
                 </div>
 
                 <div>
-                    <FAQ filter={props.filter} isGradingSystem={isGradingSystem} />
+                    {/* <FAQ filter={props.filter} isGradingSystem={isGradingSystem} /> */}
                 </div>
             </div>
         </div>
