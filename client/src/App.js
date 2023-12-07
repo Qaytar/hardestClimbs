@@ -14,7 +14,7 @@ function App() {
   // Initial state setup for backend data, FAQ data and loading state
   const [backendData, setBackendData] = useState([]);
   const [FAQdata, setFAQdata] = useState({});
-  const [loading, setLoading] = useState(true);
+  //const [loading, setLoading] = useState(true);
 
   // Fetch backend data when component mounts
   /*use the right fetch depending on local or remote server*/
@@ -29,7 +29,7 @@ function App() {
         setFAQdata(populateFAQdata(data));
 
         // Set loading to false after the data is fetched
-        setLoading(false);
+        //setLoading(false);
       });
   }, []);
 
