@@ -26,7 +26,7 @@ function App() {
         setBackendData(data);
 
         // Calculations the answers of FAQ
-        setFAQdata(populateFAQdata(data));
+        //setFAQdata(populateFAQdata(data));
 
         // Set loading to false after the data is fetched
         //setLoading(false);
