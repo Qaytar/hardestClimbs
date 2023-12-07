@@ -23,12 +23,11 @@ function App() {
       //fetch('/api')
       .then(res => res.json())
       .then((data) => {
-        // Set backend data and FAQ data after it's fetched
-        // 'data' is all the data used in the app. It's a populated array of the object Sends (mongoose). Model can be found in the folder 'models' in the server side code
         setBackendData(data);
 
-        // FAQ data is contained in the backend data, it requires some basic fetching and calculations done in the folder 'FAQdata'
+        // Calculations the answers of FAQ
         setFAQdata(populateFAQdata(data));
+
         // Set loading to false after the data is fetched
         setLoading(false);
       });

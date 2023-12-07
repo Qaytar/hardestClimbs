@@ -39,6 +39,7 @@ export const emptyFAQdata = {
             { question: 'Who is the strongest male boulder climber?', answer: '' },
             { question: 'Who was the first to climb V16 boulder?', answer: '' },
             { question: 'Who was the first to climb V17 boulder?', answer: '' },
+            { question: "What's the most recent V16 male ascent in bouldering?", answer: '' },
             { question: "What's the most recent V17 male ascent in bouldering?", answer: '' },
         ],
         boulderWoman: [
@@ -82,6 +83,7 @@ export const emptyFAQdata = {
             { question: 'Who is the strongest male boulder climber?', answer: '' },
             { question: 'Who was the first to climb 8C+ boulder?', answer: '' },
             { question: 'Who was the first to climb 9A boulder?', answer: '' },
+            { question: "What's the most recent 8C+ male ascent in bouldering?", answer: '' },
             { question: "What's the most recent 9A male ascent in bouldering?", answer: '' },
         ],
         boulderWoman: [
