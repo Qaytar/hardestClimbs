@@ -7,7 +7,7 @@
 
 export const rankedEuropeanGrades = {
     sport: ['9c', '9b+', '9b+ or 9b/+', '9b or 9b/+', '9b', '9b or 9a+', '9a+'],
-    boulder: ['9A', '9A or 8C+', '8C+', '8C+ or 8C', '8C', '8C+ or 8C', '8B+', '8B+ or 8B']
+    boulder: ['9A', '9A or 8C+', '8C+', '8C+ or 8C', '8C', '8C or 8B+', '8B+', '8B+ or 8B']
 }
 
 export const rankedAmericanGrades = {
