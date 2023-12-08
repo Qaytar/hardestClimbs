@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import ListSendsChronological from './sendsPagesComp/ListSendsChronological';
 import ListSendsClimberGrouped from './sendsPagesComp/ListSendsClimberGrouped';
 import PopupInstructions from './sendsPagesComp/PopupInstructions';
@@ -7,9 +7,11 @@ import FAQ from './sendsPagesComp/FAQ';
 import Toggle from './ui/Toggle';
 import NavBar from './ui/NavBar';
 import styles from './SendsPagesLayout.module.css'
+import { FAQcontext } from '../App.js';
 
 
 function SendsPagesLayout(props) {
+    const faqData = useContext(FAQcontext);
 
     // State variable to control the display of the data, either grouped by climber or in chronological order.
     const [isDisplayData, setIsDisplayData] = useState('byClimber');
@@ -69,7 +71,8 @@ function SendsPagesLayout(props) {
                 </div>
 
                 <div>
-                    <FAQ filter={props.filter} isGradingSystem={isGradingSystem} />
+                    {faqData ? <FAQ filter={props.filter} isGradingSystem={isGradingSystem} /> : null}
+
                 </div>
             </div>
         </div>
