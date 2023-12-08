@@ -71,7 +71,8 @@ function SendsPagesLayout(props) {
                 </div>
 
                 <div>
-                    <FAQ filter={props.filter} isGradingSystem={isGradingSystem} />
+                    {console.log('about to render FAQ component from its parent component. faqData:', faqData)}
+                    {faqData ? <FAQ filter={props.filter} isGradingSystem={isGradingSystem} /> : null}
                 </div>
             </div>
         </div>

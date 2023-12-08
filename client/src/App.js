@@ -13,7 +13,7 @@ export const FAQcontext = createContext();
 function App() {
   // Initial state setup for backend data, FAQ data and loading state
   const [backendData, setBackendData] = useState([]);
-  const [FAQdata, setFAQdata] = useState({});
+  const [FAQdata, setFAQdata] = useState(false);
   //const [loading, setLoading] = useState(true);
 
   // Fetch backend data when component mounts
