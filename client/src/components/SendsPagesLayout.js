@@ -72,7 +72,6 @@ function SendsPagesLayout(props) {
 
                 <div>
                     {faqData ? <FAQ filter={props.filter} isGradingSystem={isGradingSystem} /> : null}
-
                 </div>
             </div>
         </div>

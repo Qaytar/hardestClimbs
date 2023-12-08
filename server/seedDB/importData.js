@@ -34,6 +34,8 @@ const sendsMappingCsvPath = path.join(__dirname, 'sends_mapping.csv');
 //     }
 // };
 
+
+// Expects dates to come from the .csv either in format "mmm-YY" or a just the year as a number ``2018`
 const parseDate = (dateStr) => {
     console.log('input:', dateStr)
     const parts = dateStr.split('-');
