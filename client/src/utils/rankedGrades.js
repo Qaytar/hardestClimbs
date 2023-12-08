@@ -23,7 +23,7 @@ export const highestGrades = {
     },
     boulder: {
         man: ['9A', '9A or 8C+'],
-        woman: ['8C']
+        woman: ['8C+ or 8C', '8C', '8C or 8B+']
     }
 }
 

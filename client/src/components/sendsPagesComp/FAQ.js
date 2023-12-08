@@ -4,7 +4,11 @@ import { FAQcontext } from '../../App.js';
 import styles from './FAQ.module.css';
 
 function FAQ(props) {
+    console.log('inside FAQ component')
+
+
     const faqData = useContext(FAQcontext);
+    console.log('faqData:', faqData)
     // Construct the filter for the specific discipline and gender in format 'sportMan' or 'boulderWoman'
     const filter = props.filter.discipline + props.filter.gender.charAt(0).toUpperCase() + props.filter.gender.slice(1);
 
